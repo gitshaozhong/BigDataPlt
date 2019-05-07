@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件重构</title>
+    #parse("sys/mulheader.html")
+    <link rel="stylesheet" href="${rc.contextPath}/statics/css/bigdata-style.css">
+    <script src="${rc.contextPath}/statics/libs/echarts.min.js"></script>
+</head>
+<body>
+<div id="wrapper">
+    <div class="wrapper wrapper-content">
+        <div class="row"> <!-- /.row -->
+            <div class="col-lg-4 col-sm-4 col-md-4">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>事件重构</h5>
+                        <span class="label label-primary"></span>
+                        <div class="ibox-tools">
+                            <a class="collapse-link">
+                                <i class="fa fa-chevron-up"></i>
+                            </a>
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                <i class="fa fa-wrench"></i>
+                            </a>
+                            <a class="close-link">
+                                <i class="fa fa-times"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="ibox-content inspinia-timeline" style="display: block;height: 253px;" id="recon">
+                        <p style="font-size: 20px;font-family: 宋体;padding-top: 15px;color:#000;text-indent: 2em;">
+                            在社交媒体时代，每天都有大量用户生成的视频上传到互联网，捕捉到世界各地的事件。
+                            基于这些视频从中挖掘出有效信息来重建事件真相是一项新兴的挑战性工作。</p>
+                        <p style="font-size: 20px;font-family: 宋体;color:#000;text-indent: 2em;">
+                            事件重构就是针对某一事件，将社交网络上得到的不同角度、不同位置、不同时间拍摄的视频进行处理，
+                            实现多视频、多角度、多位置、同时刻的展现，进而达到在时间维度和空间维度上全方位了解事件的目的。
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-8 col-sm-8 col-md-8">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>事件概况</h5>
+                        <!--<span class="label label-primary">随便写写</span>-->
+                        <div class="ibox-tools">
+                            <a class="collapse-link">
+                                <i class="fa fa-chevron-up"></i>
+                            </a>
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                <i class="fa fa-wrench"></i>
+                            </a>
+                            <a class="close-link">
+                                <i class="fa fa-times"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="ibox-content inspinia-timeline" style="display: block;" id="recon_info">
+                        <!--<h1>这里是内容</h1>-->
+                        <div class="row"> <!-- /.row -->
+                            <div class="col-lg-5 col-sm-5 col-md-5">
+                                <div class="info_img">
+                                    <img src="${rc.contextPath}/statics/pic/recon_info.jpg" width="100%" height="auto">
+                                </div>
+                            </div>
+                            <div class="col-lg-7 col-sm-7 col-md-7">
+                                <div class="feed-element">
+                                    <div class="media-body " style="padding-top: 20px">
+                                        <strong style="font-size: 20px;font-weight: 600;color:#5e6e7e;display: inline-block;margin-bottom: 10px;">美国波士顿马拉松爆炸事件</strong> <br>
+                                        <!--<small class="text-muted"><a href="http://tech.sina.com.cn/d/i/2017-10-27/doc-ifynfvar4425645.shtml" style="font-size: 13px;font-family: 宋体;">来源：新浪科技 发布于2017/10/31</a></small>-->
+                                        <!--<br>-->
+                                        <p style="font-size: 20px;font-family: 宋体;padding-top: 15px;color:#000;text-indent: 2em;">
+                                            波士顿马拉松爆炸案是一件发生于2013年4月15日北美东部时间下午2时50分的爆炸事件，
+                                            发生地点位在美国马萨诸塞州波士顿科普里广场。</p>
+                                        <p style="font-size: 20px;font-family: 宋体;color:#000;text-indent: 2em;">
+                                            事件中共有两枚炸弹爆炸，
+                                            第一枚炸弹在美国东部时间2013年4月15日下午2时49分12秒于比赛终点线附近观众区引爆，
+                                            第二枚炸弹随后在一家体育用品店引爆。此次爆炸共造成3人死亡，183人受伤，17人情况危急。
+                                        </p>
+                                        <!--<p style="font-size: 16px;font-family: 宋体;color:#5e6e7e;text-indent: 2em;">-->
+                                        <!--此事件随后在中外大量社交平台上引起轩然大波，并在网络上给用户带来机器人将取代人类的反AI恐慌。-->
+                                        <!--</p>-->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row"> <!-- /.row -->
+            <div class="col-lg-7 col-sm-7 col-md-7">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>数据模态</h5>
+                        <div class="ibox-tools">
+                            <!--<a class="info_ico_weibo info_bottom" id="weibo_ico"><img src="${rc.contextPath}/statics/pic/weibo_logo.png" width="30px" height="27px" v-on:click="show_weibo"></a>-->
+                            <!--<a class="info_ico_twitter" id="twitter_ico"><img src="${rc.contextPath}/statics/pic/twitter_logo.png" width="30px" height="27px" v-on:click="show_twitter"></a>-->
+                            <a class="collapse-link">
+                                <i class="fa fa-chevron-up"></i>
+                            </a>
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                <i class="fa fa-wrench"></i>
+                            </a>
+                            <a class="close-link">
+                                <i class="fa fa-times"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="ibox-content inspinia-timeline" style="display: block;height: 440px">
+                        <div class="file" style="display: inline-block;width: 30%;">
+                            <a href="file_manager.html#">
+                                <span class="corner"></span>
+                                <div class="image">
+                                    <img alt="image" class="img-responsive" src="${rc.contextPath}/statics/pic/recon_audio1.png"  width="100%" height="auto">
+                                </div>
+                                <div class="file-name">
+                                    audio1.mp3<br>来源：YouTube
+                                    <br>
+                                    <small>音频</small>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="file" style="display: inline-block;width: 30%;">
+                            <a href="file_manager.html#">
+                                <span class="corner"></span>
+                                <div class="image">
+                                    <img alt="image" class="img-responsive" src="${rc.contextPath}/statics/pic/recon-pic1.jpg"  width="100%" height="auto">
+                                </div>
+                                <div class="file-name">
+                                    picture1.jpg <br>来源：Flickr
+                                    <br>
+                                    <small>图像</small>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="file" style="display: inline-block;width: 30%;">
+                            <a href="file_manager.html#">
+                                <span class="corner"></span>
+                                <div class="image">
+                                    <video src="${rc.contextPath}/statics/pic/recon_video1.mp4" controls="controls" loop="loop" autoplay="autoplay">
+                                        您的浏览器不支持 video 标签。
+                                    </video>
+                                </div>
+                                <div class="file-name">
+                                    video1.mp4 <br>来源：YouTube
+                                    <br>
+                                    <small>视频</small>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="file" style="display: inline-block;width: 30%;">
+                            <a href="file_manager.html#">
+                                <span class="corner"></span>
+                                <div class="image">
+                                    <img alt="image" class="img-responsive" src="${rc.contextPath}/statics/pic/recon_audio2.png"  width="100%" height="auto">
+                                </div>
+                                <div class="file-name">
+                                    audio2.mp3 <br>来源：Dailymotion
+                                    <br>
+                                    <small>音频</small>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="file" style="display: inline-block;width: 30%;">
+                            <a href="file_manager.html#">
+                                <span class="corner"></span>
+                                <div class="image">
+                                    <img alt="image" class="img-responsive" src="${rc.contextPath}/statics/pic/recon-pic2.jpg"  width="100%" height="auto">
+                                </div>
+                                <div class="file-name">
+                                    picture2.jpg <br>来源：Flickr
+                                    <br>
+                                    <small>图像</small>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="file" style="display: inline-block;width: 30%;">
+                            <a href="file_manager.html#">
+                                <span class="corner"></span>
+                                <div class="image">
+                                    <video src="${rc.contextPath}/statics/pic/recon_video2.mp4" controls="controls" loop="loop" autoplay="autoplay">
+                                        您的浏览器不支持 video 标签。
+                                    </video>
+                                </div>
+                                <div class="file-name">
+                                    video2.mp4 <br>来源：Dailymotion
+                                    <br>
+                                    <small>视频</small>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5 col-sm-5 col-md-5">
+                <div class="ibox float-e-margins" id="info_ico">
+                    <div class="ibox-title">
+                        <h5>数据来源</h5>
+                        <div class="ibox-tools">
+                            <!--<a class="info_ico_weibo info_bottom" id="weibo_ico"><img src="${rc.contextPath}/statics/pic/weibo_logo.png" width="30px" height="27px" v-on:click="show_weibo"></a>-->
+                            <!--<a class="info_ico_twitter" id="twitter_ico"><img src="${rc.contextPath}/statics/pic/twitter_logo.png" width="30px" height="27px" v-on:click="show_twitter"></a>-->
+                            <a class="collapse-link">
+                                <i class="fa fa-chevron-up"></i>
+                            </a>
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                <i class="fa fa-wrench"></i>
+                            </a>
+                            <a class="close-link">
+                                <i class="fa fa-times"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="ibox-content inspinia-timeline" style="display: block;height: 440px">
+                        <img src="${rc.contextPath}/statics/pic/youtube_logo.png" width="30%" height="auto" style="float: left;margin-right: 3%;">
+                        <img src="${rc.contextPath}/statics/pic/dailymotion.jpg" width="30%" height="auto" style="float: left;margin-right: 3%;">
+                        <img src="${rc.contextPath}/statics/pic/flickr.jpg" width="30%" height="auto" style="float: left;margin-right: 3%;">
+                        <div id="data_source" style="height:420px;width: auto;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row"> <!-- /.row -->
+            <div class="col-lg-6 col-sm-6 col-md-6">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>时间同步</h5>
+                        <!--<span class="label label-primary">temporal alignment</span>-->
+                        <div class="ibox-tools">
+                            <a class="collapse-link">
+                                <i class="fa fa-chevron-up"></i>
+                            </a>
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                <i class="fa fa-wrench"></i>
+                            </a>
+                            <a class="close-link">
+                                <i class="fa fa-times"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="ibox-content inspinia-timeline" style="display: block;">
+                        <!--<h1>这里是内容</h1>-->
+                        <a class="btn btn-sm btn-primary" href="http://10.112.193.234/event_reconstruction/" style="font-size: 15px;">时间同步展示</a>
+                        <div style="display: inline-block;float: right;">
+                            <p style="font-size: 18px;display: inline-block;margin-right: 10px;">视频上传:</p>
+                            <a href="http://10.112.193.234/upload/"><button class="btn btn-outline btn-success  dim" type="button"><i class="fa fa-upload"></i></button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-sm-6 col-md-6">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>3D重构</h5>
+                        <!--<span class="label label-primary">3D reconstruction</span>-->
+                        <div class="ibox-tools">
+                            <a class="collapse-link">
+                                <i class="fa fa-chevron-up"></i>
+                            </a>
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                <i class="fa fa-wrench"></i>
+                            </a>
+                            <a class="close-link">
+                                <i class="fa fa-times"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="ibox-content inspinia-timeline" style="display: block;">
+                        <!--<h1>这里是内容</h1>-->
+                        <a class="btn btn-sm btn-primary" href="http://10.112.193.234/3D_demo/info.cs.bupt.edu/daisy/themes_basic/Event_Reconstruction.html" style="font-size: 15px;">3D重构展示</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    // 基于准备好的dom，初始化echarts实例
+    var myChart = echarts.init(document.getElementById('data_source'));
+    var scale = 1;
+    var echartData = [ {
+        value: 600,
+        name: 'Flickr'
+    }, {
+        value: 2000,
+        name: 'Youtube'
+    },{
+        value: 54,
+        name: 'dailymotion'
+    }];
+    var rich = {
+        yellow: {
+            color: "#ffc72b",
+            fontSize: 25 * scale,
+            padding: [5, 4],
+            align: 'center'
+        },
+        total: {
+            color: "#ffc72b",
+            fontSize: 35 * scale,
+            align: 'center'
+        },
+        white: {
+            color: "#666",
+            align: 'center',
+            fontSize: 20 * scale,
+            padding: [21, 0]
+        },
+        blue: {
+            color: '#49dff0',
+            fontSize: 15 * scale,
+            align: 'center'
+        },
+        hr: {
+            borderColor: '#0b5263',
+            width: '100%',
+            borderWidth: 1,
+            height: 0,
+        }
+    };
+    var option = {
+        backgroundColor: '#fff',
+//        title: {
+//            text:'总数',
+//            left:'center',
+//            top:'53%',
+//            padding:[24,0],
+//            textStyle:{
+//                color:'#666',
+//                fontSize:18*scale,
+//                align:'center'
+//            }
+//        },
+//        legend: {
+//            selectedMode:true,
+//            formatter: function(name) {
+//                var total = 0;
+//                var averagePercent;
+//                echartData.forEach(function(value, index, array) {
+//                    total += value.value;
+//                });
+//                return '{total|' + total + '}';
+//            },
+//            data: [echartData[0].name],
+//            itemGap: 50,
+//            left: 'center',
+//            top: 'center',
+//            icon: 'none',
+//            align:'center',
+//            textStyle: {
+//                color: "000",
+//                fontSize: 16 * scale,
+//                rich: rich
+//            }
+//        },
+        series: [{
+            name: '数据来源',
+            type: 'pie',
+            radius: ['25%', '55%'],
+            hoverAnimation: true,
+            color: ['#c487ee', '#deb140', '#49dff0', '#034079', '#6f81da', '#00ffb4'],
+            label: {
+                normal: {
+                    formatter: function(params, ticket, callback) {
+                        var total = 0;
+                        var percent = 0;
+                        echartData.forEach(function(value, index, array) {
+                            total += value.value;
+                        });
+                        percent = ((params.value / total) * 100).toFixed(1);
+                        return '{white|' + params.name + '}\n{hr|}\n{yellow|' + params.value + '}{blue|' + percent + '%}';
+                    },
+                    rich: rich
+                }
+            },
+            labelLine: {
+                normal: {
+                    length: 35 * scale,
+                    length2: 0,
+                    lineStyle: {
+                        color: '#000'
+                    }
+                }
+            },
+            data: echartData
+        }]
+    };
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+    window.onresize = myChart.resize;
+
+</script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        var h=$("#recon_info").height();
+        $("#recon").height(h);
+    });
+    $(window).resize(function(){
+        var h=$("#recon_info").height();
+        $("#recon").height(h);
+    });
+</script>
+</body>
+</html>

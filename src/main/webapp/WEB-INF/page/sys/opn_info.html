@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>事件简介</title>
+    #parse("sys/mulheader.html")
+    <link rel="stylesheet" href="${rc.contextPath}/statics/css/bigdata-style.css">
+    <script src="${rc.contextPath}/statics/libs/echarts.min.js"></script>
+</head>
+<body>
+<div id="wrapper">
+    <div class="wrapper wrapper-content">
+        <div class="row"> <!-- /.row -->
+            <div class="col-lg-5 col-sm-5 col-md-5">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>事件概况</h5>
+                        <div class="ibox-tools">
+                            <a class="collapse-link">
+                                <i class="fa fa-chevron-up"></i>
+                            </a>
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                <i class="fa fa-wrench"></i>
+                            </a>
+                            <a class="close-link">
+                                <i class="fa fa-times"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="ibox-content inspinia-timeline" style="display: block;height: 490px;">
+                        <h3 style="font-size: 20px;display: inline-block;margin-bottom: 22px;">沙特成为第一个向机器人授予公民资格的国家</h3><br>
+                        <small class="text-muted"><a href="http://tech.sina.com.cn/d/i/2017-10-27/doc-ifynfvar4425645.shtml" style="font-size: 15px;font-family: 宋体;">来源：新浪科技 发布于2017/10/31</a></small>
+                        <img src="${rc.contextPath}/statics/pic/Sophia.jpeg" width="60%" height="auto" style="float: right;margin-left: 20px;">
+                        <p style="font-size: 19px;font-family: 宋体;padding-top:15px;color:#000;text-indent: 2em;line-height: 1.5em;">据外媒报道，未来展现技术的进步，
+                                    沙特阿拉伯成为了世界上第一个授予机器人公民身份的国家。这个称为“索菲亚”（Sophia）
+                                    的表情机器人由香港Hanson Robotics公司研发，此前已经有过几次公开露面。
+                                    索菲亚近日出现在沙特阿拉伯的未来投资计划会议上，并接受了CNBC Andrew Ross Sorkin的采访。
+                        </p>
+                        <p style="font-size: 19px;font-family: 宋体;color:#000;text-indent: 2em;line-height: 1.5em;">
+                            此事件随后在中外大量社交平台上引起轩然大波，并在网络上给用户带来机器人将取代人类的反AI恐慌。
+                        </p>
+
+                        </div>
+                    </div>
+                </div>
+            <div class="col-lg-7 col-sm-7 col-md-7">
+                <div class="ibox float-e-margins" id="info_ico">
+                    <div class="ibox-title">
+                        <h5>数据模态及来源</h5>
+                        <div class="ibox-tools">
+                            <!--<a class="info_ico_weibo info_bottom" id="weibo_ico"><img src="${rc.contextPath}/statics/pic/weibo_logo.png" width="30px" height="27px" v-on:click="show_weibo"></a>-->
+                            <!--<a class="info_ico_twitter" id="twitter_ico"><img src="${rc.contextPath}/statics/pic/twitter_logo.png" width="30px" height="27px" v-on:click="show_twitter"></a>-->
+                            <a class="collapse-link">
+                                <i class="fa fa-chevron-up"></i>
+                            </a>
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                <i class="fa fa-wrench"></i>
+                            </a>
+                            <a class="close-link">
+                                <i class="fa fa-times"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="ibox-content inspinia-timeline" style="display: block;height: 490px">
+                        <div class="row">
+                            <div class="col-lg-6 col-sm-6 col-md-6">
+                                <h3 style="font-size: 22px;display: inline-block;margin-bottom: 22px;">文本</h3><br>
+                                <img src="${rc.contextPath}/statics/pic/weibo_logo.png" width="19%" height="auto" style="float: left;margin-right: 3%;">
+                                <img src="${rc.contextPath}/statics/pic/weixin_logo.png" width="22%" height="auto" style="float: left;margin-right: 3%;">
+                                <img src="${rc.contextPath}/statics/pic/twitter_logo.png" width="19%" height="auto" style="float: left;margin-right: 3%;">
+                                <img src="${rc.contextPath}/statics/pic/renmin_photo.png" width="21%" height="auto" style="float: left;">
+                                <div id="text_data_source" style="height:300px;width: auto;"></div>
+                            </div>
+                            <div class="col-lg-6 col-sm-6 col-md-6">
+                                <h3 style="font-size: 22px;display: inline-block;margin-bottom: 30px;">视频</h3><br>
+                                <img src="${rc.contextPath}/statics/pic/bilibili_logo.png" width="39%" height="auto" style="float: left;margin-right: 10%;margin-bottom: 13px;">
+                                <img src="${rc.contextPath}/statics/pic/youtube_logo.png" width="41%" height="auto" style="float: left;">
+                                <div id="video_data_source" style="height:300px;width: auto;margin-top: 10px;"></div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--<div class="row">-->
+            <!--<div class="col-lg-5 col-sm-5 col-md-5">-->
+                <!--<div class="ibox float-e-margins" id="info_ico">-->
+                    <!--<div class="ibox-title">-->
+                        <!--<h5>数据来源</h5>-->
+                        <!--<div class="ibox-tools">-->
+                            <!--&lt;!&ndash;<a class="info_ico_weibo info_bottom" id="weibo_ico"><img src="${rc.contextPath}/statics/pic/weibo_logo.png" width="30px" height="27px" v-on:click="show_weibo"></a>&ndash;&gt;-->
+                            <!--&lt;!&ndash;<a class="info_ico_twitter" id="twitter_ico"><img src="${rc.contextPath}/statics/pic/twitter_logo.png" width="30px" height="27px" v-on:click="show_twitter"></a>&ndash;&gt;-->
+                            <!--<a class="collapse-link">-->
+                            <!--<i class="fa fa-chevron-up"></i>-->
+                            <!--</a>-->
+                            <!--<a class="dropdown-toggle" data-toggle="dropdown" href="#">-->
+                            <!--<i class="fa fa-wrench"></i>-->
+                            <!--</a>-->
+                            <!--<a class="close-link">-->
+                            <!--<i class="fa fa-times"></i>-->
+                            <!--</a>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="ibox-content inspinia-timeline" style="display: block;height: 440px">-->
+                        <!--<div id="data_source" style="height:420px;width: auto;margin-top: -15px;"></div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="col-lg-7 col-sm-7 col-md-7">-->
+                <!--<div class="ibox float-e-margins" id="info_category">-->
+                    <!--<div class="ibox-title">-->
+                        <!--<h5>数据模态</h5>-->
+                        <!--<div class="ibox-tools">-->
+                            <!--<a class="info_text info_bottom" id="text" v-on:click="show_text">文本</a>-->
+                            <!--<a class="info_video" id="video" v-on:click="show_video">视频</a>-->
+                            <!--<a class="collapse-link">-->
+                                <!--<i class="fa fa-chevron-up"></i>-->
+                            <!--</a>-->
+                            <!--<a class="dropdown-toggle" data-toggle="dropdown" href="#">-->
+                                <!--<i class="fa fa-wrench"></i>-->
+                            <!--</a>-->
+                            <!--<a class="close-link">-->
+                                <!--<i class="fa fa-times"></i>-->
+                            <!--</a>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="ibox-content inspinia-timeline" style="display: block;height: 440px">-->
+                        <!--<div class="info_show" id="info_text">-->
+                            <!--<div class="feed-element">-->
+                                <!--<a href="profile.html" class="pull-left">-->
+                                    <!--<img alt="image" class="img-circle" src="${rc.contextPath}/statics/pic/lishipin_photo.png">-->
+                                <!--</a>-->
+                                <!--<div class="media-body ">-->
+                                    <!--<small class="pull-right" style="font-size: 12px;">302万</small>-->
+                                    <!--<strong style="font-size: 16px;">梨视频（微博）</strong> <br>-->
+                                    <!--<p style="font-size: 14px;padding-top: 10px">【细思极恐！首个获得公民身份的机器人，思维敏捷且能对答如流”[并不简单]】-->
+                                        <!--10月25日，沙特未来投资计划大会上，AI机器人索菲亚成为第一个拥有沙特公民身份的机器人。-->
+                                        <!--被问AI威胁论时，她回怼：你看太多好莱坞电影了。-->
+                                        <!--并表示：“我大多数时间都很积极向上。”[喵喵] </p>-->
+                                    <!--&lt;!&ndash;<br>&ndash;&gt;-->
+                                    <!--<small class="text-muted"><a href="http://weibo.com/6004281123/FsiTTehh6" style="font-size: 12px;">2017-10-27 13:42</a></small>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                            <!--<div class="feed-element">-->
+                                <!--<a href="profile.html" class="pull-left">-->
+                                    <!--<img alt="image" class="img-circle" src="${rc.contextPath}/statics/pic/info_Twitter.png">-->
+                                <!--</a>-->
+                                <!--<div class="media-body ">-->
+                                    <!--<small class="pull-right" style="font-size: 12px;">5608</small>-->
+                                    <!--<strong style="font-size: 16px;">Frank Lennon‏（Twitter）</strong> <br>-->
+                                    <!--<p style="font-size: 14px;padding-top:10px">Ah here! Don't be casting aspersions at IT's.-->
+                                        <!--Sophia the Robot is an IT. Isn't IT? IT got a dig out from Saudi Arabia.-->
+                                        <!--IT was probably even given a Bank Account by Saudi Arabia.-->
+                                        <!--The other IT you are referring to is probably still stuck with its Post Office Book?-->
+                                        <!-- - 😂😂😂😂👇👆</p>-->
+                                    <!--&lt;!&ndash;<br>&ndash;&gt;-->
+                                    <!--<small class="text-muted"><a href="https://twitter.com/DisparatePost/status/955477456550531078" style="font-size: 12px;">2017-10-27 14:27</a></small>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                            <!--<div class="feed-element">-->
+                                <!--<a href="profile.html" class="pull-left">-->
+                                    <!--<img alt="image" class="img-circle" src="${rc.contextPath}/statics/pic/xinhua_photo.png">-->
+                                <!--</a>-->
+                                <!--<div class="media-body ">-->
+                                    <!--&lt;!&ndash;<small class="pull-right" style="font-size: 12px;">5608</small>&ndash;&gt;-->
+                                    <!--<strong style="font-size: 16px;">新华网‏（网媒）</strong> <br>-->
+                                    <!--<p style="font-size: 14px;padding-top:10px">新华社利雅得１０月２７日电 日前在沙特阿拉伯首都利雅得举行的“未来投资倡议”大会上，-->
+                                        <!--“女性”机器人索菲娅被授予沙特公民身份。她也因此成为史上首个获得公民身份的机器人。</p>-->
+                                    <!--<small class="text-muted"><a href="http://www.xinhuanet.com/world/2017-10/27/c_1121867076.htm" style="font-size: 12px;">2017-10-27 15:07</a></small>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="info_hidden" id="info_video">-->
+                            <!--&lt;!&ndash;这里是视频&ndash;&gt;-->
+                            <!--<video src="${rc.contextPath}/statics/pic/video_info.mp4" controls="controls" loop="loop" width="100%">-->
+                                <!--您的浏览器不支持 video 标签。-->
+                            <!--</video>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    </div>
+</div>
+
+<script>
+//    var change_data = new Vue({
+//        el: '#info_ico',
+//        methods: {
+//            show_weibo: function () {
+//                $('#weibo_ico').addClass("info_bottom");
+//                $('#twitter_ico').removeClass("info_bottom");
+//
+//                $('#info_tiwwter').attr("class", "info_hidden");
+//                $('#info_weibo').attr("class", "info_pic");
+//            },
+//            show_tiwtter: function () {
+//                $('#twitter_ico').addClass("info_bottom");
+//                $('#weibo_ico').removeClass("info_bottom");
+//
+//                $('#info_weibo').attr("class", "info_hidden");
+//                $('#info_tiwwter').attr("class", "info_pic");
+//            }
+//        }
+//    });
+    var change_category = new Vue({
+        el: '#info_category',
+        methods: {
+            show_text: function () {
+                $('#text').addClass("info_bottom");
+                $('#video').removeClass("info_bottom");
+
+                $('#info_video').attr("class", "info_hidden");
+                $('#info_text').attr("class", "info_show");
+            },
+            show_video: function () {
+                $('#video').addClass("info_bottom");
+                $('#text').removeClass("info_bottom");
+
+                $('#info_text').attr("class", "info_hidden");
+                $('#info_video').attr("class", "info_show");
+            }
+        }
+    });
+</script>
+<script type="text/javascript">
+    // 基于准备好的dom，初始化echarts实例
+    var myChart1 = echarts.init(document.getElementById('text_data_source'));
+    var option1 = {
+        tooltip: {
+            trigger: 'item',
+            formatter: "{a} <br/>{b}: {c} ({d}%)"
+        },
+        legend: {
+            x: 'center',
+            y: 'bottom',
+            textStyle: {fontSize: 16},
+            data:['微博','微信','Twitter','网媒']
+        },
+        series: [
+            {
+                name:'数据量',
+                type:'pie',
+                radius: ['50%', '80%'],
+                avoidLabelOverlap: false,
+                label: {
+                    normal: {
+                        show: false,
+                        position: 'center'
+                    },
+                    emphasis: {
+                        show: true,
+                        textStyle: {
+                            fontSize: '30',
+                            fontWeight: 'bold'
+                        }
+                    }
+                },
+                labelLine: {
+                    normal: {
+                        show: false
+                    }
+                },
+                data:[
+                    {value:4300, name:'微博'},
+                    {value:4421, name:'Twitter'},
+                    {value:1382, name:'微信'},
+                    {value:469, name:'网媒'}
+                ]
+            }
+        ]
+    };
+    // 使用刚指定的配置项和数据显示图表。
+    myChart1.setOption(option1);
+    window.onresize = myChart1.resize;
+
+</script>
+<script type="text/javascript">
+    // 基于准备好的dom，初始化echarts实例
+    var myChart2 = echarts.init(document.getElementById('video_data_source'));
+    var option2 = {
+        tooltip: {
+            trigger: 'item',
+            formatter: "{a} <br/>{b}: {c} ({d}%)"
+        },
+        legend: {
+            x: 'center',
+            y: 'bottom',
+            data:[
+                {name: 'bilibili',
+                    textStyle:{
+                        fontSize:16
+                    }
+                },
+                {name: 'Youtube',
+                    textStyle:{
+                        fontSize:16
+                    }
+                }]
+        },
+        series: [
+            {
+                name:'数据量',
+                type:'pie',
+                radius: ['50%', '80%'],
+                avoidLabelOverlap: false,
+                label: {
+                    normal: {
+                        show: false,
+                        position: 'center'
+                    },
+                    emphasis: {
+                        show: true,
+                        textStyle: {
+                            fontSize: '30',
+                            fontWeight: 'bold'
+                        }
+                    }
+                },
+                labelLine: {
+                    normal: {
+                        show: false
+                    }
+                },
+                data:[
+                    {value:46, name:'bilibili'},
+                    {value:23, name:'Youtube'}
+                ]
+            }
+        ]
+    };
+    // 使用刚指定的配置项和数据显示图表。
+    myChart2.setOption(option2);
+    window.onresize = myChart2.resize;
+
+</script>
+</body>
+</html>

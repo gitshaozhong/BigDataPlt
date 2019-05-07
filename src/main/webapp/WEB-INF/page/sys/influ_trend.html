@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>传播趋势</title>
+    #parse("sys/mulheader.html")    <link rel="stylesheet" href="${rc.contextPath}/statics/css/bigdata-style.css">
+    <script src="${rc.contextPath}/statics/libs/echarts.min.js"></script>
+    <style type="text/css">
+        .first-opn{
+            padding-top:10px;
+            padding-bottom: 20px;
+            font-size: 20px;
+        }
+        .first-count{
+            font-size: 18px;
+        }
+        .first-user{
+            font-size: 20px;
+        }
+        .first-content{
+            font-size: 17px;
+            padding-top: 10px
+        }
+        .first-timestamp{
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+<div id="wrapper">
+    <div class="wrapper wrapper-content">
+        <div class="row"> <!-- /.row -->
+            <!--传播趋势图-->
+            <div class="col-lg-8 col-sm-8 col-md-8">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>传播趋势</h5>
+
+                        <div class="ibox-tools">
+                            <a class="collapse-link">
+                                <i class="fa fa-chevron-up"></i>
+                            </a>
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                <i class="fa fa-wrench"></i>
+                            </a>
+                            <a class="close-link">
+                                <i class="fa fa-times"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="ibox-content inspinia-timeline" style="display: block;">
+                        <div id="main1" style="width: 100%;height:400px;"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-4 col-md-4">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>发布内容</h5>
+                        <div class="ibox-tools">
+                            <a class="collapse-link">
+                                <i class="fa fa-chevron-up"></i>
+                            </a>
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                <i class="fa fa-wrench"></i>
+                            </a>
+                            <a class="close-link">
+                                <i class="fa fa-times"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="ibox-content inspinia-timeline" style="display: block;">
+
+
+                        <div id="opint_1" style="height: 400px">
+                            <p class="first-opn">微博首发辟谣</p >
+                            <div class="feed-element">
+                            <a class="pull-left">
+                                <img src="${rc.contextPath}/statics/pic/weibo_logo.png" style="width: 30px;height: auto;margin-right: 10px;display: inline-block">
+                            </a>
+                            <div class="media-body ">
+
+                                <strong class="first-user">江苏网警</strong> <br>
+                                <p class="first-content">微博辟谣# “最新国际通用报警求助手势”是真的吗？
+                                    小苏查了下，各国报警电话除了110、911，还有其他号码，这个手势并不能广泛代表；
+                                    手势的唯一出处是厄齐尔，拇指与无名指靠拢向下，是他的经典庆祝方式；
+                                    最重要的是，小苏身边的警察没人认识这个手势,不为大众所知的报警方式只会害人</p >
+                                <br>
+                                <small class="text-muted"><a href="http://weibo.com/6004281123/FsiTTehh6" style="font-size: 16px;">2016-4-11 09:59</a></small>
+                            </div>
+                        </div>
+                    </div>
+
+                        <div id="opint_2" style="height: 400px" class="info_hidden";>
+                            <p class="first-opn">微信首发谣言</p >
+                            <div class="feed-element">
+                                <a class="pull-left">
+                                    <img src="${rc.contextPath}/statics/pic/weixin_logo.png" style="width: 30px;height: auto;margin-right: 10px;display: inline-block">
+                                </a>
+                                <div class="media-body ">
+
+                                    <strong class="first-user" style="display: inline-block">品茶悟道福地春</strong> <br>
+                                    <p class="first-content">最新国际通用报警求助手势!不要赞,转起来!</p >
+                                    <br>
+                                    <small class="text-muted"><a href="http://weibo.com/6004281123/FsiTTehh6" style="font-size: 16px;">2016-4-11 09:59</a></small>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row"> <!-- /.row -->
+            <!--传播趋势图-->
+            <div class="col-lg-12 col-sm-12 col-md-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>传播趋势双向图</h5>
+                        <span class="label label-primary"></span>
+                        <div class="ibox-tools">
+                            <a class="collapse-link">
+                                <i class="fa fa-chevron-up"></i>
+                            </a>
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                <i class="fa fa-wrench"></i>
+                            </a>
+                            <a class="close-link">
+                                <i class="fa fa-times"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="ibox-content inspinia-timeline" style="display: block;">
+                        <div id="main2" style="width: 100%;height:400px;"></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!--&lt;!&ndash;test部分&ndash;&gt;-->
+        <!--<div class="row">-->
+        <!--<div class="col-lg-6 col-sm-6 col-md-6">-->
+        <!--<div class="tabs-container">-->
+        <!--<ul class="nav nav-tabs">-->
+        <!--<li class=""><a data-toggle="tab" href="tabs.html#tab-1" aria-expanded="false"> This is tab</a></li>-->
+        <!--<li class="active"><a data-toggle="tab" href="tabs.html#tab-2" aria-expanded="true">This is second tab</a></li>-->
+        <!--</ul>-->
+        <!--<div class="tab-content">-->
+        <!--<div id="tab-1" class="tab-pane">-->
+        <!--<div class="panel-body">-->
+        <!--<strong>Lorem ipsum dolor sit amet, consectetuer adipiscing</strong>-->
+        <!--<p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of-->
+        <!--existence in this spot, which was created for the bliss of souls like mine.</p>-->
+        <!--<p>I am so happy, my dear friend, so absorbed in the exquisite sense of mere tranquil existence, that I neglect my talents. I should be incapable of drawing a single stroke at-->
+        <!--the present moment; and yet I feel that I never was a greater artist than now. When.</p>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--<div id="tab-2" class="tab-pane active">-->
+        <!--<div class="panel-body">-->
+        <!--<strong>Donec quam felis</strong>-->
+        <!--<p>Thousand unknown plants are noticed by me: when I hear the buzz of the little world among the stalks, and grow familiar with the countless indescribable forms of the insects-->
+        <!--and flies, then I feel the presence of the Almighty, who formed us in his own image, and the breath </p>-->
+        <!--<p>I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend, so absorbed in the exquisite-->
+        <!--sense of mere tranquil existence, that I neglect my talents. I should be incapable of drawing a single stroke at the present moment; and yet.</p>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--</div>-->
+    </div>
+</div>
+<script type="text/javascript">
+    var myChart1 = echarts.init(document.getElementById('main1'));
+
+    // 指定图表的配置项和数据
+    var base = +new Date(2016,3,11,0);
+    var oneHour = 3600 * 1000;
+    var date = [];
+    var data1 = [	0,	0,	0,	0,	0,	0,	0,	1,	38,	9,	24,	6,	10,	17,	37,	26,	12,	5,	7,	1,	4,	9,	2,	1,	0,	0,	0,	0,	0,	1,	3,	4,	17,	11,	10,	5,	6,	1,	14,	6,	8,	1,	3,	3,	0,	1,	0,	0,	0,	0,	0,	0,	0,	0,	0,	5,	5,	3,	2,	0,	0,	2,	4,	1,	3,	1,	0,	0,	1,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	1,	4,	2,	3,	0,	0,	0,	0,	0,	1,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	];
+    var data2 = [	0,	0,	0,	0,	0,	1,	0,	1,	0,	3,	9,	9,	2,	6,	5,	29,	42,	47,	32,	29,	28,	22,	7,	10,	0,	0,	0,	2,	1,	12,	10,	26,	21,	38,	27,	43,	20,	23,	35,	78,	95,	77,	42,	48,	29,	37,	8,	8,	2,	0,	0,	3,	1,	10,	21,	34,	28,	36,	43,	25,	10,	22,	18,	51,	59,	41,	19,	18,	16,	15,	3,	4,	0,	0,	0,	0,	1,	2,	4,	10,	16,	14,	19,	7,	5,	11,	11,	25,	29,	14,	16,	8,	5,	7,	6,	2,	0,	0,	0,	0,	0,	0,	];
+    var data3 = [	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	2,	11,	3,	6,	2,	11,	4,	13,	6,	3,	1,	0,	3,	1,	7,	5,	0,	12,	6,	24,	25,	21,	18,	17,	6,	7,	13,	11,	5,	4,	1,	2,	1,	0,	0,	0,	2,	1,	0,	0,	3,	0,	0,	3,	6,	7,	16,	6,	1,	3,	5,	2,	2,	4,	1,	2,	0,	2,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	3,	2,	4,	1,	1,	1,	3,	0,	3,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	];
+    var data4 = [	0,	0,	0,	0,	0,	1,	0,	2,	38,	12,	33,	17,	23,	26,	48,	57,	65,	56,	52,	36,	35,	32,	9,	14,	1,	7,	5,	2,	13,	19,	37,	55,	59,	67,	54,	54,	33,	37,	60,	89,	107,	79,	47,	52,	29,	38,	8,	10,	3,	0,	0,	6,	1,	10,	24,	45,	40,	55,	51,	26,	13,	29,	24,	54,	66,	43,	21,	18,	19,	15,	3,	4,	0,	0,	0,	0,	1,	2,	4,	14,	22,	20,	23,	8,	6,	14,	11,	28,	30,	14,	16,	8,	5,	7,	6,	2,	0,	0,	0,	0,	0,	0,	];
+    var data5 = [0,	0,	0,	0,	0,	0,	0,	1,	37,	3,	2,	4,	0,	2,	1,	4,	0,	3,	0,	1,	1,	0,	0,	2,	0,	0,	0,	0,	0,	0,	0,	1,	1,	0,	0,	0,	1,	0,	0,	0,	0,	1,	0,	0,	0,	1,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	1,	0,	1,	0,	0,	0,	1,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	1,	1,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,];
+    for (var i = 0; i < data1.length; i++) {
+        var now = new Date(base += oneHour);
+        date.push([now.getFullYear(), now.getMonth()+1, now.getDate()].join('/')+' '+now.getHours()+'时');
+    }
+
+    option1= {
+        backgroundColor: '#FFFAFA',//整体背景色
+        tooltip: {
+            trigger: 'axis',
+            axisPointer: {
+                lineStyle: {
+                    color: '#57617B'
+                }
+            }
+        },
+        title: {
+            left: 'left',
+    //        text: '传播趋势图',
+        },
+        legend: {
+            data: ['微博', '微信','网媒','全部','谣言'],
+            textStyle: {
+                fontSize: 16 // 用 legend.textStyle.fontSize 更改示例大小
+            }
+        },
+        toolbox: {
+            feature: {
+                dataZoom: {
+                    yAxisIndex: 'none'
+                },
+                markpoint : {show: true},
+                restore: {},
+                saveAsImage: {}
+            }
+        },
+
+        xAxis: {
+            type: 'category',
+            boundaryGap: false,
+            data: date
+        },
+        yAxis: {
+            type: 'value',
+            boundaryGap: [0, '40%']
+        },
+        dataZoom: [{
+            type: 'inside',
+            start: 0,
+            end: 100
+        }, {
+            start: 0,
+            end: 10,
+            handleIcon: 'M10.7,11.9v-1.3H9.3v1.3c-4.9,0.3-8.8,4.4-8.8,9.4c0,5,3.9,9.1,8.8,9.4v1.3h1.3v-1.3c4.9-0.3,8.8-4.4,8.8-9.4C19.5,16.3,15.6,12.2,10.7,11.9z M13.3,24.4H6.7V23h6.6V24.4z M13.3,19.6H6.7v-1.4h6.6V19.6z',
+            handleSize: '80%',
+            handleStyle: {
+                color: '#fff',
+                shadowBlur: 3,
+                shadowColor: 'rgba(0, 0, 0, 0.6)',
+                shadowOffsetX: 2,
+                shadowOffsetY: 2
+            }
+        }],
+        series: [
+            {
+                name:'微博',
+                type:'line',
+                smooth:true,
+                symbol: 'none',
+                sampling: 'average',
+                itemStyle: {
+                    normal: {
+                        color: 'rgb(255, 127, 0)'
+                    }
+                },
+                areaStyle: {
+                    normal: {
+                        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                            offset: 0,
+                            color: 'rgb(255, 255, 255)'
+                        }, {
+                            offset: 1,
+                            color: 'rgb(255, 255, 255)'
+                        }])
+                    }
+                },
+
+                data: data1,
+                markPoint: {
+                    symbol: 'pin',
+                    symbolSize: 30,
+
+                    itemStyle:{
+                        normal:{
+                            color:"#1ca195",
+                            label:{
+                                show:true,
+                                position:'top',
+                                formatter:function(param){
+                                    if(param.value == 1)
+                                        return '微博辟谣首发'
+
+                                }
+                            }
+                        }
+                    },
+                    data: [
+                        {name: '微博辟谣首发', value: 1, xAxis: '2016/4/11 9时', yAxis: 38}
+                    ]
+                }
+
+            },
+            {
+                name:'微信',
+                type:'line',
+                smooth:true,
+                symbol: 'none',
+                sampling: 'average',
+                itemStyle: {
+                    normal: {
+                        color: 'rgb(139, 0, 0)'//线的颜色
+                    }
+                },
+                areaStyle: {
+                    normal: {
+                        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                            offset: 0,
+                            color: 'rgb(255, 255, 255)'
+                        }, {
+                            offset: 1,
+                            color: 'rgb(255, 255, 255)'
+                        }])
+                    }
+                },
+                data: data2,
+                markPoint: {
+                    symbol: 'pin',
+                    symbolSize: 30,
+
+                    itemStyle:{
+                        normal:{
+                            color:"#1ca195",
+                            label:{
+                                show:true,
+                                position:'top',
+                                formatter:function(param){
+                                    if(param.value == 2)
+                                        return '微信谣言首发'
+
+                                }
+                            }
+                        }
+                    },
+                    data: [
+                        {name: '微信谣言首发', value: 2, xAxis: '2016/4/11 6时', yAxis: 1}
+                    ]
+                }
+            },
+            {
+                name:'网媒',
+                type:'line',
+                smooth:true,
+                symbol: 'none',
+                sampling: 'average',
+                itemStyle: {
+                    normal: {
+                        color: 'rgb(128, 0, 255)'
+                    }
+                },
+                areaStyle: {
+                    normal: {
+                        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                            offset: 0,
+                            color: 'rgb(255, 255, 255)'
+                        }, {
+                            offset: 1,
+                            color: 'rgb(255, 255, 255)'
+                        }])
+                    }
+                },
+                data: data3
+            },
+            {
+                name:'全部',
+                type:'line',
+                smooth:true,
+                symbol: 'none',
+                sampling: 'average',
+                itemStyle: {
+                    normal: {
+                        color: 'rgb(0, 255, 0)'
+                    }
+                },
+                areaStyle: {
+                    normal: {
+                        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                            offset: 0,
+                            color: 'rgb(255, 255, 255)'
+                        }, {
+                            offset: 1,
+                            color: 'rgb(255, 255, 255)'
+                        }])
+                    }
+                },
+                data: data4
+            },
+            {
+                name:'谣言',
+                type:'line',
+                smooth:true,
+                symbol: 'none',
+                sampling: 'average',
+                itemStyle: {
+                    normal: {
+                        color: 'rgb(255, 0, 0)'
+                    }
+                },
+                areaStyle: {
+                    normal: {
+                        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                            offset: 0,
+                            color: 'rgb(255, 255, 255)'
+                        }, {
+                            offset: 1,
+                            color: 'rgb(255, 255, 255)'
+                        }])
+                    }
+                },
+                data: data5
+            }
+        ]
+    };
+
+
+    // 使用刚指定的配置项和数据显示图表。
+    myChart1.setOption(option1);
+    window.onresize = myChart1.resize;
+    myChart1.on('click', function (params) {
+        if (params.componentType === 'markPoint') {
+            // 点击到了 markPoint 上
+            if (params.value === 1) {
+
+                $('#opint_1').attr("class", "opn_show");
+                $('#opint_2').attr("class", "info_hidden");
+                // 点击到了 index 为 5 的 series 的 markPoint 上。
+            }
+            if (params.value === 2) {
+                $('#opint_1').attr("class", "info_hidden");
+                $('#opint_2').attr("class", "opn_show");
+                // 点击到了 index 为 5 的 series 的 markPoint 上。
+            }
+        }
+
+    });
+</script>
+<script type="text/javascript">
+    var myChart2 = echarts.init(document.getElementById('main2'));
+
+    // 指定图表的配置项和数据
+    var myData = ['微博', '微信', '网媒', '全部'];
+    var databeast = {//辟谣
+
+        11: [168,259,62,489],
+        12: [94,576,189,859],
+        13: [27,481,66,574],
+        14: [13,248,26,287],
+    };
+    var databeauty = {//谣言
+        11: [40,13,0,53],
+        12: [1,6,0,7],
+        13: [0,2,0,2],
+        14: [0,2,0,2],
+
+    };
+    var timeLineData = [11, 12, 13, 14];
+
+    option2 = {
+        baseOption: {
+            backgroundColor: '#FFF',
+            timeline: {
+                show: true,
+                axisType: 'category',
+                tooltip: {
+                    show: true,
+                    formatter: function(params) {
+                        console.log(params);
+                        return params.name + '号数据统计';
+                    }
+                },
+                autoPlay: true,
+                currentIndex: 6,
+                playInterval: 1000,
+                label: {
+                    normal: {
+                        show: true,
+                        interval: 'auto',
+                        formatter: '{value}',
+                    },
+                },
+                data: [],
+            },
+            title: {
+                //   text:'三种媒体传播分析',
+                textStyle: {
+                    color: '#fff',
+                    fontSize: 16,
+                },
+
+            },
+            legend: {
+                data: ['辟谣', '谣言'],
+                top: 4,
+                right: '20%',
+                textStyle: {
+                    color: '#000',
+                    fontSize: 16
+                },
+
+            },
+            tooltip: {
+                show: true,
+                trigger: 'axis',
+                formatter: '{b}<br/>{a}: {c}人',
+                axisPointer: {
+                    type: 'shadow',
+                }
+            },
+
+            toolbox:{
+                right:20,
+                feature:{
+                    saveAsImage: {},
+                    restore: {},
+                    dataView: {},
+                    dataZoom: {},
+                    magicType: {
+                        type:['line','bar']
+                    },
+                    // brush: {},
+                }
+            },
+
+            grid: [{
+                show: false,
+                left: '4%',
+                top: 60,
+                bottom: 60,
+                containLabel: true,
+                width: '46%',
+            }, {
+                show: false,
+                left: '50.5%',
+                top: 80,
+                bottom: 60,
+                width: '0%',
+            }, {
+                show: false,
+                right: '4%',
+                top: 60,
+                bottom: 60,
+                containLabel: true,
+                width: '46%',
+            }, ],
+
+            xAxis: [
+                {
+                    type: 'value',
+                    inverse: true,
+                    axisLine: {
+                        show: false,
+                    },
+                    axisTick: {
+                        show: false,
+                    },
+                    position: 'top',
+                    min:0,
+                    max:900,//设置固定刻度
+                    axisLabel: {
+                        show: true,
+                        textStyle: {
+                            color: '#B2B2B2',
+                            fontSize: 12,
+                        },
+                    },
+                    splitLine: {
+                        show: true,
+                        lineStyle: {
+                            color: '#1F2022',
+                            width: 1,
+                            type: 'solid',
+                        },
+                    },
+                }, {
+                    gridIndex: 1,
+                    show: false,
+                }, {
+                    gridIndex: 2,
+                    type: 'value',
+                    axisLine: {
+                        show: false,
+                    },
+                    axisTick: {
+                        show: false,
+                    },
+                    position: 'top',
+                    min:0,
+                    max:900,//设置固定刻度
+                    axisLabel: {
+                        show: true,
+                        textStyle: {
+                            color: '#B2B2B2',
+                            fontSize: 12,
+                        },
+                    },
+                    splitLine: {
+                        show: true,
+                        lineStyle: {
+                            color: '#1F2022',
+                            width: 1,
+                            type: 'solid',
+                        },
+                    },
+                }, ],
+            yAxis: [{
+                type: 'category',
+                inverse: true,
+                position: 'right',
+                axisLine: {
+                    show: false
+                },
+                axisTick: {
+                    show: false
+                },
+                axisLabel: {
+                    show: false,
+                    margin: 8,
+                    textStyle: {
+                        color: '#9D9EA0',
+                        fontSize: 12,
+                    },
+
+                },
+                data: myData,
+            }, {
+                gridIndex: 1,
+                type: 'category',
+                inverse: true,
+                position: 'left',
+                axisLine: {
+                    show: false
+                },
+                axisTick: {
+                    show: false
+                },
+                axisLabel: {
+                    show: true,
+                    textStyle: {
+                        color: '#9D9EA0',
+                        fontSize: 16,
+                    },
+
+                },
+                data: myData.map(function(value) {
+                    return {
+                        value: value,
+                        textStyle: {
+                            align: 'center',
+                        }
+                    }
+                }),
+            }, {
+                gridIndex: 2,
+                type: 'category',
+                inverse: true,
+                position: 'left',
+                axisLine: {
+                    show: false
+                },
+                axisTick: {
+                    show: false
+                },
+                axisLabel: {
+                    show: false,
+                    textStyle: {
+                        color: '#9D9EA0',
+                        fontSize: 12,
+                    },
+
+                },
+                data: myData,
+            }, ],
+            series: [],
+
+        },
+
+        options: [],
+
+
+    };
+
+    for (var i = 0; i < timeLineData.length; i++) {
+        option2.baseOption.timeline.data.push(timeLineData[i]);
+        option2.options.push({
+            title: {
+                text: timeLineData[i]+ '号“报警求助手势”' + '传播趋势双向图',
+                textStyle: {
+                    color: '#000',
+                    fontSize: 20,
+                },
+            },
+            series: [{
+                name: '辟谣',
+                type: 'bar',
+                barGap: 20,
+                barWidth: 20,
+                label: {
+                    normal: {
+                        show: false,
+                    },
+                    emphasis: {
+                        show: true,
+                        position: 'left',
+                        offset: [0, 0],
+                        textStyle: {
+                            color: '#fff',
+                            fontSize: 14,
+                        },
+                    },
+                },
+                itemStyle: {
+                    normal: {
+                        color: '#659F83',
+                    },
+                    emphasis: {
+                        color: '#08C7AE',
+                    },
+                },
+                data: databeast[timeLineData[i]],
+            },
+
+
+                {
+                    name: '谣言',
+                    type: 'bar',
+                    barGap: 20,
+                    barWidth: 20,
+                    xAxisIndex: 2,
+                    yAxisIndex: 2,
+                    label: {
+                        normal: {
+                            show: false,
+                        },
+                        emphasis: {
+                            show: true,
+                            position: 'right',
+                            offset: [0, 0],
+                            textStyle: {
+                                color: '#fff',
+                                fontSize: 14,
+                            },
+                        },
+                    },
+                    itemStyle: {
+                        normal: {
+                            color: '#F68989',
+                        },
+                        emphasis: {
+                            color: '#F94646',
+                        },
+                    },
+                    data: databeauty[timeLineData[i]],
+                }
+            ]
+        });
+    }
+    // 使用刚指定的配置项和数据显示图表。
+    myChart2.setOption(option2);
+    window.onresize = myChart2.resize;
+</script>
+</body>
+</html>

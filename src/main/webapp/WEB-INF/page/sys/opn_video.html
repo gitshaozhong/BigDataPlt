@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>视频解读</title>
+    #parse("sys/mulheader.html")
+    <link rel="stylesheet" href="${rc.contextPath}/statics/css/bigdata-style.css">
+    <script src="${rc.contextPath}/statics/libs/echarts.min.js"></script>
+    <script src="${rc.contextPath}/statics/libs/video.js"></script>
+
+</head>
+<body>
+<div id="wrapper">
+    <div class="wrapper wrapper-content">
+        <div class="row"> <!-- /.row -->
+            <div class="col-lg-12 col-sm-12 col-md-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>视频情感分析</h5>
+                        <div class="ibox-tools">
+                            <a class="collapse-link">
+                                <i class="fa fa-chevron-up"></i>
+                            </a>
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                <i class="fa fa-wrench"></i>
+                            </a>
+                            <a class="close-link">
+                                <i class="fa fa-times"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="ibox-content inspinia-timeline" style="display: block;">
+                        <div class="row">
+                            <div class="col-lg-5 col-sm-5 col-md-5">
+                                <video src="${rc.contextPath}/statics/pic/sophia_processed_small2.mp4" controls="controls" loop="loop" autoplay="autoplay" width="100%" height="300px">
+                                    您的浏览器不支持 video 标签。
+                                </video>
+                                <div class="col-lg-12 col-sm-12 col-md-12">
+                                    <div id="chart" style="width: 100%;height:500px;margin-top: 20px;"></div>
+                                </div>
+                            </div>
+                            <div class="col-lg-7 col-sm-7 col-md-7">
+                                <div class="ibox float-e-margins">
+                                    <!--<div class="ibox-title">-->
+                                        <!--<h5>情感倾向</h5>-->
+                                        <!--<div class="ibox-tools">-->
+                                            <!--<a class="collapse-link">-->
+                                                <!--<i class="fa fa-chevron-up"></i>-->
+                                            <!--</a>-->
+                                            <!--<a class="dropdown-toggle" data-toggle="dropdown" href="#">-->
+                                                <!--<i class="fa fa-wrench"></i>-->
+                                            <!--</a>-->
+                                            <!--<a class="close-link">-->
+                                                <!--<i class="fa fa-times"></i>-->
+                                            <!--</a>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                    <div class="ibox-content inspinia-timeline" style="display: block;padding-top: 0px !important;">
+                                        <div class="row">
+                                            <div class="col-lg-12 col-sm-12 col-md-12">
+                                                <div id="bubble" style="width: 100%;height:400px;"></div>
+                                            </div>
+                                            <div class="col-lg-12 col-sm-12 col-md-12">
+                                                <div id="pie" style="width: 100%;height:360px;margin-top: 60px;"></div>
+                                            </div>
+                                        </div>
+                                        <!--<div class="row">-->
+                                            <!--<div class="col-lg-12 col-sm-12 col-md-12">-->
+                                                <!--<div id="pie_final" style="width: 100%;height:300px;margin-top: 10px"></div>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row"> <!-- /.row -->
+            <div class="col-lg-12 col-sm-12 col-md-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>视频最终情感倾向</h5>
+                        <div class="ibox-tools">
+                            <a class="collapse-link">
+                                <i class="fa fa-chevron-up"></i>
+                            </a>
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                <i class="fa fa-wrench"></i>
+                            </a>
+                            <a class="close-link">
+                                <i class="fa fa-times"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="ibox-content inspinia-timeline" style="display: block;">
+                        <div id="pie_final" style="width: 100%;height:350px;margin-top: 10px"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row"> <!-- /.row -->
+            <div class="col-lg-12 col-sm-12 col-md-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>更多展示</h5>
+                        <span class="label label-primary"></span>
+                        <div class="ibox-tools">
+                            <a class="collapse-link">
+                                <i class="fa fa-chevron-up"></i>
+                            </a>
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                <i class="fa fa-wrench"></i>
+                            </a>
+                            <a class="close-link">
+                                <i class="fa fa-times"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="ibox-content inspinia-timeline" style="display: block;">
+                        <!--<h1>这里是内容</h1>-->
+                        <!--<a class="btn btn-sm btn-primary" href="/" style="font-size: 18px;"></a>-->
+                        <a class="btn btn-sm btn-primary" href="http://localhost:8084/" target="_blank" style="font-size: 18px;">人脸表情实时识别</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    // 绘制图表。
+    echarts.init(document.getElementById('pie_final')).setOption({
+        tooltip : {
+            trigger: 'item',
+            formatter: "{a} <br/>{b} : {c} ({d}%)"
+        },
+        legend: {
+            left: 'center',
+            data: ['生气','厌恶','恐惧','高兴','伤心','惊讶','中立'],
+            textStyle: {
+                fontSize:'16'
+            }
+        },
+        series: {
+            type: 'pie',
+            radius: '80%',
+            center: ['50%', '60%'],
+            data: [
+//                1.80,0.00,2.92,16.70,0.97,1.37,76.23
+                { name: '生气', value: 1.80 },
+                { name: '厌恶', value: 0.00 },
+                { name: '恐惧', value: 2.92 },
+                { name: '高兴', value: 16.70 },
+                { name: '伤心', value: 0.97 },
+                { name: '惊讶', value: 1.37 },
+                { name: '中立', value: 76.23 }
+            ],
+            itemStyle: {
+                emphasis: {
+                    shadowBlur: 10,
+                    shadowOffsetX: 0,
+                    shadowColor: 'rgba(0, 0, 0, 0.5)'
+                },
+                normal: {
+                    label: {
+                        textStyle: {
+                            // 用 itemStyle.normal.label.textStyle.fontSize 來更改餅圖上項目字體大小
+                            fontSize: 16
+                        }
+                    }
+                }
+            }
+        }
+    });
+</script>
+<script type="text/javascript">
+    var myBubbleChart = echarts.init(document.getElementById('bubble'));
+    var myPieChart = echarts.init(document.getElementById('pie'));
+
+    var emotions = ['生气', '厌恶', '恐惧',
+        '高兴', '伤心', '惊讶', '中立'];
+
+    var emotions_data = [
+        [0.02,0.00,0.02,0.01,0.01,0.01,0.10],
+        [0.02,0.00,0.01,0.00,0.01,0.00,0.26],
+        [0.02,0.00,0.03,0.00,0.01,0.01,0.14],
+        [0.00,0.00,0.00,0.00,0.00,0.00,0.00],
+        [0.00,0.00,0.00,0.00,0.00,0.00,0.00],
+        [0.00,0.00,0.02,0.00,0.01,0.01,0.07],
+        [0.12,0.00,0.16,0.01,0.08,0.10,0.54],
+        [0.05,0.00,0.07,0.01,0.04,0.09,0.74],
+        [0.01,0.00,0.01,0.48,0.02,0.01,0.46],
+        [0.04,0.00,0.06,0.29,0.05,0.05,0.51]
+    ]
+
+    var acc_data = [
+        [2.36,0.00,4.41,0.44,0.67,0.44,91.68],
+        [7.23,0.00,9.61,3.02,3.78,3.02,73.34],
+        [6.76,0.00,9.24,2.77,3.49,2.85,74.88],
+        [6.76,0.00,9.24,2.77,3.49,2.85,74.88],
+        [6.76,0.00,9.24,2.77,3.49,2.85,74.88],
+        [6.63,0.00,9.26,2.72,3.44,2.81,75.13],
+        [5.20,0.00,8.20,1.17,2.43,2.74,80.26],
+        [2.91,0.00,4.63,0.62,1.37,2.10,88.36],
+        [2.12,0.00,3.36,15.07,1.01,1.52,76.93],
+        [1.80,0.00,2.92,16.70,0.97,1.37,76.23]
+    ]
+
+    var seconds = [];
+
+    var pieData = [
+        { name: '生气', value: 10 },
+        { name: '厌恶', value: 10 },
+        { name: '恐惧', value: 10 },
+        { name: '高兴', value: 10 },
+        { name: '伤心', value: 10 },
+        { name: '惊讶', value: 10 },
+        { name: '中立', value: 10 }
+    ]
+
+    function formatTime(second) {
+        return [parseInt(second / 60) % 60, second % 60].join(":")
+            .replace(/\b(\d)\b/g, "0$1");
+    }
+
+    // for (let index = 0; index < emotions_data.length; index++) {
+    //     seconds.push(formatTime(index));
+    // }
+
+    var optionBubble = {
+        tooltip: {
+            position: 'top'
+        },
+        legend: {
+            data: emotions
+        },
+        title: [],
+        singleAxis: [],
+        series: []
+    };
+
+    var optionPie = {
+        title: {
+            text: '情感占比',
+            x: 'center'
+        },
+        tooltip: {
+            trigger: 'item',
+            formatter: "{a} <br/>{b} : {c} ({d}%)"
+        },
+        legend: {
+            orient: 'vertical',
+            left: 'left',
+            data: emotions
+        },
+        series: [
+            {
+                name: 'Emotion',
+                type: 'pie',
+                radius: '55%',
+                center: ['50%', '60%'],
+                data: pieData,
+                itemStyle: {
+                    emphasis: {
+                        shadowBlur: 10,
+                        shadowOffsetX: 0,
+                        shadowColor: 'rgba(0, 0, 0, 0.5)'
+                    }
+                }
+            }
+        ]
+    }
+
+    echarts.util.each(emotions, function (emotion, idx) {
+        optionBubble.title.push({
+            textBaseline: 'middle',
+            top: (idx + 0.5) * 100 / 7 + '%',
+            text: emotion
+        });
+        optionBubble.singleAxis.push({
+            left: 150,
+            type: 'category',
+            boundaryGap: false,
+            data: seconds,
+            top: (idx * 100 / 7 + 5) + '%',
+            height: (100 / 7 - 10) + '%',
+        });
+        optionBubble.series.push({
+            singleAxisIndex: idx,
+            coordinateSystem: 'singleAxis',
+            type: 'scatter',
+            data: [],
+            symbolSize: function (dataItem) {
+                return dataItem[1] * 40;
+            }
+        });
+    });
+
+    function sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+    async function begin() {
+        for (let i = 0; i < emotions_data.length; i++) {
+            seconds.push(formatTime(i));
+            optionBubble.singleAxis.data = seconds;
+            for (let j = 0; j < emotions_data[i].length; j++) {
+                optionBubble.series[j].data.push([i, emotions_data[i][j]]);
+            }
+            myBubbleChart.setOption(optionBubble);
+            await sleep(1000);
+        }
+    }
+
+    begin();
+
+    function addData() {
+        values = acc_data.shift()
+        for (let emotion = 0; emotion < emotions.length; emotion++) {
+            pieData.push({ 'name': emotions[emotion], 'value': values.shift() });
+            pieData.shift();
+        }
+    }
+
+    setInterval(function () {
+        addData();
+        myPieChart.setOption({
+            series: {
+                data: pieData
+            }
+        });
+    }, 1000);
+
+    myBubbleChart.setOption(optionBubble);
+    myPieChart.setOption(optionPie);
+</script>
+<script type="text/javascript" src="${rc.contextPath}/statics/libs/audio.js"></script>
+</body>
+</html>

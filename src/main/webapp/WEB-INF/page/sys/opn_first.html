@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首位引发者</title>
+    #parse("sys/mulheader.html")
+    <link rel="stylesheet" href="${rc.contextPath}/statics/css/bigdata-style.css">
+    <script src="${rc.contextPath}/statics/libs/echarts.min.js"></script>
+    <style type="text/css">
+        .first-opn{
+            padding-top:10px;
+            padding-bottom: 20px;
+            font-size: 20px;
+        }
+        .first-count{
+            font-size: 18px;
+        }
+        .first-user{
+            font-size: 20px;
+        }
+        .first-content{
+            font-size: 17px;
+            padding-top: 10px
+        }
+        .first-timestamp{
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+<div id="wrapper">
+    <div class="wrapper wrapper-content">
+        <div class="row"> <!-- /.row -->
+            <div class="col-lg-8 col-sm-8 col-md-8">
+                <div class="ibox float-e-margins">
+                    <!--<div class="ibox-title">-->
+                        <!--<h5>首位引发者</h5>-->
+                        <!--<span class="label label-primary"></span>-->
+                        <!--<div class="ibox-tools">-->
+                            <!--<a class="collapse-link">-->
+                                <!--<i class="fa fa-chevron-up"></i>-->
+                            <!--</a>-->
+                            <!--<a class="dropdown-toggle" data-toggle="dropdown" href="#">-->
+                                <!--<i class="fa fa-wrench"></i>-->
+                            <!--</a>-->
+                            <!--<a class="close-link">-->
+                                <!--<i class="fa fa-times"></i>-->
+                            <!--</a>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <div class="ibox-content inspinia-timeline" style="display: block;height: 482px;">
+                        <div id="first" style="width: 116%;height:450px;margin-left: -7%;"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-4 col-md-4">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>首发内容</h5>
+                        <span class="label label-primary"></span>
+                        <div class="ibox-tools">
+                            <a class="collapse-link">
+                                <i class="fa fa-chevron-up"></i>
+                            </a>
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                <i class="fa fa-wrench"></i>
+                            </a>
+                            <a class="close-link">
+                                <i class="fa fa-times"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="ibox-content inspinia-timeline" style="display: block;height: 435px;">
+                        <!--<h1>这里是左图的点击触发内容</h1>-->
+                        <div id="opint_1">
+                            <p class="first-opn">观点1.被问AI威胁论时，她回怼：你看太多好莱坞电影了。</p>
+                            <div class="feed-element">
+                                <a href="profile.html" class="pull-left">
+                                    <img alt="image" class="img-circle" src="${rc.contextPath}/statics/pic/lishipin_photo.png">
+                                </a>
+                                <div class="media-body ">
+                                    <small class="pull-right first-count">302万</small>
+                                    <strong class="first-user">梨视频</strong> <br>
+                                    <p class="first-content">【细思极恐！首个获得公民身份的机器人，思维敏捷且能对答如流”[并不简单]】
+                                        10月25日，沙特未来投资计划大会上，AI机器人索菲亚成为第一个拥有沙特公民身份的机器人。
+                                        被问AI威胁论时，她回怼：你看太多好莱坞电影了。
+                                        并表示：“我大多数时间都很积极向上。”[喵喵] </p>
+                                    <br>
+                                    <small class="text-muted"><a href="http://weibo.com/6004281123/FsiTTehh6" class="first-timestamp">2017-10-27 13:42</a></small>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="opint_2" class="info_hidden">
+                            <p class="first-opn">观点2.面对“自我意识”问题，索菲亚反问：“你又怎么知道自己是人类的？”</p>
+                            <div class="feed-element">
+                                <a href="profile.html" class="pull-left">
+                                    <img alt="image" class="img-circle" src="${rc.contextPath}/statics/pic/caijing_photo.png">
+                                </a>
+                                <div class="media-body ">
+                                    <small class="pull-right first-count">2329万</small>
+                                    <strong class="first-user">财经网</strong> <br>
+                                    <p class="first-content">【机器人首次被授国籍 反问：你怎么知道自己是人类】当地时间10月25日，沙特授予机器人索菲亚公民身份，
+                                        开世界先例。在接受记者采访时，面对“自我意识”问题，索菲亚反问：“你又是怎么知道自己是人类的？”</p>
+                                     <br>
+                                    <small class="text-muted"><a href="http://weibo.com/1642088277/FsjbNpPeY" class="first-timestamp">2017-10-27 14:27</a></small>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="opint_3" class="info_hidden">
+                            <p class="first-opn">观点3.此前索菲亚想毁灭人类的回答也曾引起轰动。网友：细思极恐！</p>
+                            <div class="feed-element">
+                                <a href="profile.html" class="pull-left">
+                                    <img alt="image" class="img-circle" src="${rc.contextPath}/statics/pic/renmin_photo.png">
+                                </a>
+                                <div class="media-body ">
+                                    <small class="pull-right first-count">3928万</small>
+                                    <strong class="first-user">人民网</strong> <br>
+                                    <p class="first-content">【机器人首次被授国籍 反问：你怎么知道自己是人类[吃惊]】当地时间10月25日，沙特授予机器人索菲亚公民身份，
+                                        开世界先例。面对采访中“自我意识”的问题，索菲亚反问：“你又怎么知道自己是人类？”
+                                        此前索菲亚想毁灭人类的回答也曾引起轰动。@新京报我们视频 http://t.cn/RWOH7dm网友：细思极恐！ ​</p>
+                                    <br>
+                                    <small class="text-muted"><a href="http://weibo.com/2286908003/FskjRqE7L" class="first-timestamp">2017-10-27 17:19</a></small>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="opint_4" class="info_hidden">
+                            <p class="first-opn">观点4.索菲亚回怼：“你挺多了马斯克的话。别担心，人不犯我，我不犯人。”</p>
+                            <div class="feed-element">
+                                <a href="profile.html" class="pull-left">
+                                    <img alt="image" class="img-circle" src="${rc.contextPath}/statics/pic/yanbei_photo.png">
+                                </a>
+                                <div class="media-body ">
+                                    <small class="pull-right first-count">98万</small>
+                                    <strong class="first-user">燕北新媒体</strong> <br>
+                                    <p class="first-content">【沙特阿拉伯成为第一个向机器人授予公民资格的国家，史上第一个被授予公民身份的机器人索菲亚谢金主】
+                                        在沙特举行的未来投资计划大会上，类人机器人“索菲亚”成为史上第一个入人类籍的机器人。
+                                        当CNBC主播问其如何看待AI威胁论时，索菲亚回怼：“你听多了马斯克的话。别担心，人不犯我，我不犯人。”
+                                        逼真的机器人说出这样的话，是不是感觉有一丢丢后背发凉呢？ ​</p>
+                                    <br>
+                                    <small class="text-muted"><a href="http://weibo.com/1711479641/FshfffmIR" class="first-timestamp">2017-10-27 9:30</a></small>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="opint_5" class="info_hidden">
+                            <p class="first-opn">观点5.可怕</p>
+                            <div class="feed-element">
+                                <a href="profile.html" class="pull-left">
+                                    <img alt="image" class="img-circle" src="${rc.contextPath}/statics/pic/mumu_photo.png">
+                                </a>
+                                <div class="media-body ">
+                                    <small class="pull-right first-count">2万</small>
+                                    <strong class="first-user">木木Mumuki</strong> <br>
+                                    <p class="first-content">有点可怕喔……笑起来有点渗人……</p>
+                                    <br>
+                                    <small class="text-muted"><a href="http://weibo.com/1653474735/Fsk99vwao" class="first-timestamp">2017-10-27 16:53</a></small>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="opint_6" class="info_hidden">
+                            <p class="first-opn">观点6.她被首个认定为人类的机器人，20年后，你可能和她们共同生活</p>
+                            <div class="feed-element">
+                                <a href="profile.html" class="pull-left">
+                                    <img alt="image" class="img-circle" src="${rc.contextPath}/statics/pic/yangshi_photo.png">
+                                </a>
+                                <div class="media-body ">
+                                    <small class="pull-right first-count">5151万</small>
+                                    <strong class="first-user">央视新闻</strong> <br>
+                                    <p class="first-content">【她是首个被认定为人类的机器人，20年后，你可能和她们共同生活】近日，
+                                        机器人索菲娅被授予沙特公民身份，成为世界首个获公民身份的机器人。
+                                        她能识别人类面部，理解语言，甚至还会“怼”人类：“你怎么知道你是人的？”
+                                        也许20年后，这样的高仿真机器人将和我们共同生活，你有什么期待和担心？</p>
+                                    <br>
+                                    <small class="text-muted"><a href="http://weibo.com/2656274875/FsB0yb8Ch" class="first-timestamp">2017-10-29 11:48</a></small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 col-sm-12 col-md-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>首发时间线</h5>
+                        <!--<span class="label label-primary">timeline</span>-->
+                        <div class="ibox-tools">
+                            <a class="collapse-link">
+                                <i class="fa fa-chevron-up"></i>
+                            </a>
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                <i class="fa fa-wrench"></i>
+                            </a>
+                            <a class="close-link">
+                                <i class="fa fa-times"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="ibox-content inspinia-timeline" style="display: block;">
+                        <div id="vertical-timeline" class="vertical-container dark-timeline center-orientation">
+                                <div class="vertical-timeline-block">
+                                    <div class="vertical-timeline-icon navy-bg">
+                                        <i class="fa fa-file-text"></i>
+                                    </div>
+                                    <div class="vertical-timeline-content">
+                                        <h2><img src="${rc.contextPath}/statics/pic/yanbei_photo.png" style="width: 30px;height: auto;margin-right: 10px;font-size: 20px;"> 燕北新媒体</h2>
+                                        <p style="font-size: 17px;">【沙特阿拉伯成为第一个向机器人授予公民资格的国家，史上第一个被授予公民身份的
+                                            机器人索菲亚谢金主】在沙特举行的未来投资计划大会上，类人机器人“索菲亚”成为
+                                            史上第一个入人类籍的机器人。当CNBC主播问其如何看待AI威胁论时，
+                                            索菲亚回怼：“你听多了马斯克的话。别担心，人不犯我，我不犯人。”
+                                            逼真的机器人说出这样的话，是不是感觉有一丢丢后背发凉呢？
+                                        </p>
+                                        <a class="btn btn-sm btn-primary" href="http://weibo.com/1711479641/FshfffmIR"> More info</a>
+                                        <small style="color: #1ab394;font-size: 16px;">2017-10-27 09:30</small>
+                                    </div>
+                                </div>
+                                <div class="vertical-timeline-block">
+                                    <div class="vertical-timeline-icon blue-bg">
+                                        <i class="fa fa-file-text"></i>
+                                    </div>
+                                    <div class="vertical-timeline-content">
+                                        <h2><img src="${rc.contextPath}/statics/pic/lishipin_photo.png" style="width: 30px;height: auto;margin-right: 10px;font-size: 20px;">梨视频</h2>
+                                        <p style="font-size: 17px;">【细思极恐！首个获得公民身份的机器人，思维敏捷且能对答如流”[并不简单]】
+                                            10月25日，沙特未来投资计划大会上，AI机器人索菲亚成为第一个拥有沙特公民身份的机器人。
+                                            被问AI威胁论时，她回怼：你看太多好莱坞电影了。 并表示：“我大多数时间都很积极向上。”[喵喵]
+                                        </p>
+                                        <a href="http://weibo.com/6004281123/FsiTTehh6" class="btn btn-sm btn-success"> More info </a>
+                                        <!--<span class="vertical-date">Today <br>-->
+                                        <small style="color: #1c84c6;font-size: 16px;">2017-10-27 13:42</small>
+                                    </div>
+                                </div>
+                                <div class="vertical-timeline-block">
+                                    <div class="vertical-timeline-icon lazur-bg">
+                                        <i class="fa fa-file-text"></i>
+                                    </div>
+                                    <div class="vertical-timeline-content">
+                                        <h2><img src="${rc.contextPath}/statics/pic/caijing_photo.png" style="width: 30px;height: auto;margin-right: 10px;font-size: 20px;" >财经网</h2>
+                                        <p style="font-size: 17px;">【机器人首次被授国籍 反问：你怎么知道自己是人类】当地时间10月25日，沙特授予机器人索菲亚公民身份，开世界先例。在接受记者采访时，面对“自我意识”问题，索菲亚反问：“你又是怎么知道自己是人类的？”@新京报我们视频 http://t.cn/RWOH7dm ​
+                                        </p>
+                                        <a href="http://weibo.com/1642088277/FsjbNpPeY" class="btn btn-sm btn-info"> More info </a>
+                                        <small style="color: #23c6c8;font-size: 16px;">2017-10-27 14:27</small>
+                                    </div>
+                                </div>
+                                <div class="vertical-timeline-block">
+                                    <div class="vertical-timeline-icon yellow-bg">
+                                        <i class="fa fa-file-text"></i>
+                                    </div>
+                                    <div class="vertical-timeline-content">
+                                        <h2><img src="${rc.contextPath}/statics/pic/mumu_photo.png" style="width: 30px;height: auto;margin-right: 10px;font-size: 20px;">木木Mumuki</h2>
+                                        <p style="font-size: 17px;">有点可怕喔……笑起来有点渗人……</p>
+                                        <a href="http://weibo.com/1653474735/Fsk99vwao" class="btn btn-sm btn-warning"> More info </a>
+                                        <small style="color: #f8ac59;font-size: 16px;">2017-10-27 16:53</small>
+                                    </div>
+                                </div>
+                                <div class="vertical-timeline-block">
+                                    <div class="vertical-timeline-icon lazur-bg">
+                                        <i class="fa fa-file-text"></i>
+                                    </div>
+                                    <div class="vertical-timeline-content">
+                                        <h2><img src="${rc.contextPath}/statics/pic/renmin_photo.png" style="width: 30px;height: auto;margin-right: 10px;font-size: 20px;">人民网</h2>
+                                        <p style="font-size: 17px;">【机器人首次被授国籍 反问：你怎么知道自己是人类[吃惊]】当地时间10月25日，
+                                            沙特授予机器人索菲亚公民身份，开世界先例。面对采访中“自我意识”的问题，
+                                            索菲亚反问：“你又怎么知道自己是人类？”此前索菲亚想毁灭人类的回答也曾引起轰动。
+                                            @新京报我们视频 http://t.cn/RWOH7dm网友：细思极恐！ ​</p>
+                                        <a href="http://weibo.com/2286908003/FskjRqE7L" class="btn btn-sm btn-info"> More info </a>
+                                        <small style="color: #23c6c8;font-size: 16px;">2017-10-27 17:19</small>
+                                    </div>
+                                </div>
+                                <div class="vertical-timeline-block">
+                                    <div class="vertical-timeline-icon navy-bg">
+                                        <i class="fa fa-file-text"></i>
+                                    </div>
+                                    <div class="vertical-timeline-content">
+                                        <h2><img src="${rc.contextPath}/statics/pic/yangshi_photo.png" style="width: 30px;height: auto;margin-right: 10px;font-size: 20px;">央视新闻</h2>
+                                        <p style="font-size: 17px;">【她是首个被认定为人类的机器人，20年后，你可能和她们共同生活】近日，
+                                            机器人索菲娅被授予沙特公民身份，成为世界首个获公民身份的机器人。
+                                            她能识别人类面部，理解语言，甚至还会“怼”人类：“你怎么知道你是人的？”
+                                            也许20年后，这样的高仿真机器人将和我们共同生活，你有什么期待和担心？
+                                            ...全文： http://m.weibo.cn/2656274875/4168154462654733 ​
+                                        </p>
+                                        <a href="http://weibo.com/2656274875/FsB0yb8Ch" class="btn btn-sm btn-primary"> More info </a>
+                                        <small style="color: #1ab394;font-size: 16px;">2017-10-29 11:48</small>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    // 基于准备好的dom，初始化echarts实例
+    var myChart = echarts.init(document.getElementById('first'));
+
+    // 指定图表的配置项和数据
+    var base = +new Date(2017,9,26,7);
+    var oneHour = 3600 * 1000;
+    var date = [];
+    var data = [
+        0,0,0,0,0,0,0,0,0,0,0,30,10,30,20,20,10,0,20,10,0,0,40,30,20,10,40,40,40,110,190,180,340,260,180,180,100,50,130,10,10,0,10,0,10,0,10,30,20,10,60,80,40,60,60,50,50,40,20,20,110,80,90,40,20,0,0,0,0,10,10,10,20,60,120,70,90,50,20,10,50,30,20,30,10,10,20,0,0,0,0,0,0,0,0,20,0,30,20,20,70,20,20,40,0,20,0,10,0,0,0,0,0,0,10,0,10,0,0,10,10,0,0,0,0,10,0,0,10,10,0,20,10,10,0,0,0,0,0,0,0,0,0,0,0,0,0,10,10,10,0,0,20,20,10,0,10,10,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,20,10,0,0,0,0,0,10,10,0,0,0,0,0,0,0,0,0,0,10,0,10,0,0,0,10,10,0,0,10,10,0,10,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,10,0,0,0,0,0,0,0,0,0,0,0,0,0,0,20,0,0,0,10,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+
+    for (var i = 0; i < data.length; i++) {
+        var now = new Date(base += oneHour);
+        date.push([now.getFullYear(), now.getMonth()+1, now.getDate()].join('/')+' '+now.getHours()+'时');
+    }
+
+    option = {
+        tooltip: {
+            trigger: 'axis',
+            position: function (pt) {
+                return [pt[0], '10%'];
+            }
+        },
+//        title: {
+//            left: 'center',
+//            text: '微博传播趋势图'
+//        },
+        toolbox: {
+            left: 'center',
+            feature: {
+                dataZoom: {
+                    yAxisIndex: 'none'
+                },
+                restore: {},
+                saveAsImage: {}
+            }
+        },
+        xAxis: {
+            type: 'category',
+            boundaryGap: false,
+            data: date
+        },
+        yAxis: {
+            type: 'value',
+            boundaryGap: [0, '40%']
+        },
+        dataZoom: [{
+            type: 'inside',
+            start: 0,
+            end: 100
+        }, {
+            start: 0,
+            end: 10,
+            handleIcon: 'M10.7,11.9v-1.3H9.3v1.3c-4.9,0.3-8.8,4.4-8.8,9.4c0,5,3.9,9.1,8.8,9.4v1.3h1.3v-1.3c4.9-0.3,8.8-4.4,8.8-9.4C19.5,16.3,15.6,12.2,10.7,11.9z M13.3,24.4H6.7V23h6.6V24.4z M13.3,19.6H6.7v-1.4h6.6V19.6z',
+            handleSize: '80%',
+            handleStyle: {
+                color: '#ffffff',
+                shadowBlur: 3,
+                shadowColor: 'rgba(0, 0, 0, 0.6)',
+                shadowOffsetX: 2,
+                shadowOffsetY: 2
+            }
+        }],
+        series: [
+            {
+                name:'微博数',
+                type:'line',
+                smooth:true,
+                symbol: 'none',
+                sampling: 'average',
+                itemStyle: {
+                    normal: {
+                        color: 'rgb(255, 70, 131)'
+                    }
+                },
+                data: data,
+                markPoint: {
+                    symbol: 'pin',
+                    symbolSize: 30,
+                    itemStyle:{
+                        normal:{
+                            color:'#1ca195',
+                            label:{
+                                show:true,
+                                position:'top',
+                                formatter:function(param){
+                                    if(param.value == 1)
+                                        return '观点1'
+                                    if(param.value == 2)
+                                        return '观点2'
+                                    if(param.value == 3)
+                                        return '观点3'
+                                    if(param.value == 4)
+                                        return '观点4'
+                                    if(param.value == 5)
+                                        return '观点5'
+                                    if(param.value == 6)
+                                        return '观点6'
+                                }
+                            }
+                        }
+                    },
+                    data: [
+                        {name: '观点4', value: 4, xAxis: '2017/10/27 9时', yAxis: 12},
+                        {name: '观点1', value: 1, xAxis: '2017/10/27 13时', yAxis: 112},
+                        {name: '观点2', value: 2, xAxis: '2017/10/27 14时', yAxis: 192},
+                        {name: '观点3', value: 3, xAxis: '2017/10/27 17时', yAxis: 262},
+                        {name: '观点5', value: 5, xAxis: '2017/10/27 16时', yAxis: 342},
+                        {name: '观点6', value: 6, xAxis: '2017/10/29 11时', yAxis: 72}
+                    ]
+                }
+            }
+        ]
+    };
+
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+    window.onresize = myChart.resize;
+    myChart.on('click', function (params) {
+        if (params.componentType === 'markPoint') {
+            // 点击到了 markPoint 上
+            if (params.value === 1) {
+                $('#opint_1').attr("class", "opn_show");
+                $('#opint_2').attr("class", "info_hidden");
+                $('#opint_3').attr("class", "info_hidden");
+                $('#opint_4').attr("class", "info_hidden");
+                $('#opint_5').attr("class", "info_hidden");
+                $('#opint_6').attr("class", "info_hidden");
+                // 点击到了 index 为 1 的 series 的 markPoint 上。
+            }
+            if (params.value === 2) {
+                $('#opint_1').attr("class", "info_hidden");
+                $('#opint_2').attr("class", "opn_show");
+                $('#opint_3').attr("class", "info_hidden");
+                $('#opint_4').attr("class", "info_hidden");
+                $('#opint_5').attr("class", "info_hidden");
+                $('#opint_6').attr("class", "info_hidden");
+                // 点击到了 index 为 5 的 series 的 markPoint 上。
+            }
+            if (params.value === 3) {
+                $('#opint_1').attr("class", "info_hidden");
+                $('#opint_2').attr("class", "info_hidden");
+                $('#opint_3').attr("class", "opn_show");
+                $('#opint_4').attr("class", "info_hidden");
+                $('#opint_5').attr("class", "info_hidden");
+                $('#opint_6').attr("class", "info_hidden");
+                // 点击到了 index 为 5 的 series 的 markPoint 上。
+            }
+            if (params.value === 4) {
+                $('#opint_1').attr("class", "info_hidden");
+                $('#opint_2').attr("class", "info_hidden");
+                $('#opint_3').attr("class", "info_hidden");
+                $('#opint_4').attr("class", "opn_show");
+                $('#opint_5').attr("class", "info_hidden");
+                $('#opint_6').attr("class", "info_hidden");
+                // 点击到了 index 为 5 的 series 的 markPoint 上。
+            }
+            if (params.value === 5) {
+                $('#opint_1').attr("class", "info_hidden");
+                $('#opint_2').attr("class", "info_hidden");
+                $('#opint_3').attr("class", "info_hidden");
+                $('#opint_4').attr("class", "info_hidden");
+                $('#opint_5').attr("class", "opn_show");
+                $('#opint_6').attr("class", "info_hidden");
+                // 点击到了 index 为 5 的 series 的 markPoint 上。
+            }
+            if (params.value === 6) {
+                $('#opint_1').attr("class", "info_hidden");
+                $('#opint_2').attr("class", "info_hidden");
+                $('#opint_3').attr("class", "info_hidden");
+                $('#opint_4').attr("class", "info_hidden");
+                $('#opint_5').attr("class", "info_hidden");
+                $('#opint_6').attr("class", "opn_show");
+                // 点击到了 index 为 5 的 series 的 markPoint 上。
+            }
+        }
+
+    });
+</script>
+</body>
+</html>

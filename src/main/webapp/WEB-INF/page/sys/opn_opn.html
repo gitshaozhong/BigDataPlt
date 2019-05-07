@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>网民观点</title>
+    #parse("sys/mulheader.html")
+    <link rel="stylesheet" href="${rc.contextPath}/statics/css/bigdata-style.css">
+    <script src="${rc.contextPath}/statics/libs/echarts.min.js"></script>
+    <style type="text/css">
+        table tr td,th{
+            font-size: 16px;
+        }
+        .sentiment_title p{
+            font-size: 16px;
+            display: inline-block;
+        }
+        #weibo_sentiment{
+            margin-left: 5%;
+        }
+        #weixin_sentiment{
+            margin-left: 19%;
+        }
+        #wangmei_sentiment{
+            margin-left: 19%;
+        }
+        #twitter_sentiment{
+            margin-left: 16%;
+        }
+    </style>
+</head>
+<body>
+<div id="wrapper">
+    <div class="wrapper wrapper-content">
+        <div class="row"> <!-- /.row -->
+                <div class="col-lg-6 col-sm-6 col-md-6">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <h5>中文网站观点</h5>
+                            <!--<span class="label label-primary">微博、微信、网媒</span>-->
+                            <div class="ibox-tools">
+                                <a class="collapse-link">
+                                    <i class="fa fa-chevron-up"></i>
+                                </a>
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                    <i class="fa fa-wrench"></i>
+                                </a>
+                                <a class="close-link">
+                                    <i class="fa fa-times"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="ibox-content inspinia-timeline" id="opn_chinese" style="display: block;">
+                            <!--<h1>这里是内容</h1>-->
+                            <div class="content1" _v-2ad827a2="">
+                                <div class="mediaVue" _v-507a7011="" _v-2ad827a2="">
+                                    <ul _v-507a7011="">
+                                        <li class="mediaLi" _v-507a7011="">
+                                            <div class="bang" _v-507a7011="">
+                                                <div class="bangjindu" _v-507a7011="" style="width: 100%;"></div>
+                                                <div class="content" _v-507a7011="">
+                                                    <div class="left" _v-507a7011="" title="怼">
+                                                        <span _v-507a7011="">观点1</span>&nbsp;&nbsp;&nbsp;<span
+                                                            _v-507a7011="">（怼）：被问AI威胁论时，她回怼：你看太多好莱坞电影了。</span></div>
+                                                    <div class="right" _v-507a7011=""><span class="num"
+                                                                                            _v-507a7011="">45%</span><span
+                                                            class="meiti" _v-507a7011=""></span></div>
+                                                </div>
+                                            </div>
+                                            <div class="mediaTop tipUl0"  _v-507a7011="" style="display: none;">
+                                                <div class="mediaTipVue"  _v-1bd7697a="" _v-507a7011=""
+                                                     style="top: 62px;">
+                                                    10月25日，沙特未来投资计划大会上，AI机器人索菲亚成为第一个拥有沙特公民身份的机器人。
+                                                    被问AI威胁论时，她回怼：你看太多好莱坞电影了，并表示：“我大多数时间都很积极向上。”
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="mediaLi" _v-507a7011="">
+                                            <div class="bang" _v-507a7011="">
+                                                <div class="bangjindu" _v-507a7011="" style="width: 46%;"></div>
+                                                <div class="content" _v-507a7011="">
+                                                    <div class="left" _v-507a7011=""
+                                                         title="中立"><span _v-507a7011="">观点2</span>&nbsp;&nbsp;&nbsp;<span
+                                                            _v-507a7011="">（中立）：面对“自我意识”问题，索菲亚反问：“你又怎么知道自己是人类的？”</span>
+                                                    </div>
+                                                    <div class="right" _v-507a7011=""><span class="num"
+                                                                                            _v-507a7011="">21%</span><span
+                                                            class="meiti" _v-507a7011=""></span></div>
+                                                </div>
+                                            </div>
+                                            <div class="mediaTop tipUl1"  _v-507a7011="" style="display: none;">
+                                                <div class="mediaTipVue"  _v-1bd7697a="" _v-507a7011=""
+                                                     style="top: 62px;">
+                                                    面对采访中“自我意识”的问题，索菲亚反问：“你又怎么知道自己是人类？”
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="mediaLi" _v-507a7011="">
+                                            <div class="bang" _v-507a7011="">
+                                                <div class="bangjindu" _v-507a7011="" style="width: 28%;"></div>
+                                                <div class="content" _v-507a7011="">
+                                                    <div class="left" _v-507a7011="" title="细思极恐"><span
+                                                            _v-507a7011="">观点3</span>&nbsp;&nbsp;&nbsp;<span _v-507a7011="">（细思极恐）：此前索菲亚想毁灭人类的回答也曾引起轰动。网友：细思极恐！</span>
+                                                    </div>
+                                                    <div class="right" _v-507a7011=""><span class="num"
+                                                                                            _v-507a7011="">13%</span><span
+                                                            class="meiti" _v-507a7011=""></span></div>
+                                                </div>
+                                            </div>
+                                            <div class="mediaTop tipUl2"  _v-507a7011="" style="display: none;">
+                                                <div class="mediaTipVue"  _v-1bd7697a="" _v-507a7011=""
+                                                     style="top: 62px;">
+                                                    【机器人首次被授国籍 反问：你怎么知道自己是人类[吃惊]】当地时间10月25日，
+                                                    沙特授予机器人索菲亚公民身份， 开世界先例。面对采访中“自我意识”的问题，
+                                                    索菲亚反问：“你又怎么知道自己是人类？” 此前索菲亚想毁灭人类的回答也曾引起轰动。网友：细思极恐！ ​
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="mediaLi" _v-507a7011="">
+                                            <div class="bang" _v-507a7011="">
+                                                <div class="bangjindu" _v-507a7011="" style="width: 20%;"></div>
+                                                <div class="content" _v-507a7011="">
+                                                    <div class="left" _v-507a7011=""
+                                                         title="人不犯我，我不犯人"><span
+                                                            _v-507a7011="">观点4</span>&nbsp;&nbsp;&nbsp;<span _v-507a7011="">（人不犯我，我不犯人）：索菲亚回怼：“你挺多了马斯克的话。别担心，人不犯我，我不犯人。”</span>
+                                                    </div>
+                                                    <div class="right" _v-507a7011=""><span class="num"
+                                                                                            _v-507a7011="">9%</span><span
+                                                            class="meiti" _v-507a7011=""></span></div>
+                                                </div>
+                                            </div>
+                                            <div class="mediaTop tipUl3"  _v-507a7011="" style="display: none;">
+                                                <div class="mediaTipVue"  _v-1bd7697a="" _v-507a7011=""
+                                                     style="top: 62px;">
+                                                    在沙特举行的未来投资计划大会上，类人机器人“索菲亚”成为史上第一个入人类籍的机器人。 当CNBC主播问其如何看待AI威胁论时，索菲亚回怼：“你听多了马斯克的话。别担心，人不犯我，我不犯人。” 逼真的机器人说出这样的话，是不是感觉有一丢丢后背发凉呢？ ​
+
+
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="mediaLi" _v-507a7011="">
+                                            <div class="bang" _v-507a7011="">
+                                                <div class="bangjindu" _v-507a7011="" style="width: 18%;"></div>
+                                                <div class="content" _v-507a7011="">
+                                                    <div class="left" _v-507a7011="" title="可怕"><span
+                                                            _v-507a7011="">观点5</span>&nbsp;&nbsp;&nbsp;<span _v-507a7011="">（可怕）：有点可怕喔……笑起来有点渗人……</span>
+                                                    </div>
+                                                    <div class="right" _v-507a7011=""><span class="num"
+                                                                                            _v-507a7011="">8%</span><span
+                                                            class="meiti" _v-507a7011=""></span></div>
+                                                </div>
+                                            </div>
+                                            <div class="mediaTop tipUl4"  _v-507a7011="" style="display: none;">
+                                                <div class="mediaTipVue"  _v-1bd7697a="" _v-507a7011=""
+                                                     style="top: 62px;">
+                                                    有点可怕喔……笑起来有点渗人……
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="mediaLi" _v-507a7011="">
+                                            <div class="bang" _v-507a7011="">
+                                                <div class="bangjindu" _v-507a7011="" style="width: 16%;"></div>
+                                                <div class="content" _v-507a7011="">
+                                                    <div class="left" _v-507a7011=""
+                                                         title="中立"><span
+                                                            _v-507a7011="">观点6</span>&nbsp;&nbsp;&nbsp;<span _v-507a7011="">（中立）：20年后，你可能和她们共同生活，你有什么期待和担心？</span>
+                                                    </div>
+                                                    <div class="right" _v-507a7011=""><span class="num"
+                                                                                            _v-507a7011="">4%</span><span
+                                                            class="meiti" _v-507a7011=""></span></div>
+                                                </div>
+                                            </div>
+                                            <div class="mediaTop tipUl5"  _v-507a7011="" style="display: none;">
+                                                <div class="mediaTipVue"  _v-1bd7697a="" _v-507a7011=""
+                                                     style="top: 62px;">
+                                                    【她是首个被认定为人类的机器人，20年后，你可能和她们共同生活】近日， 机器人索菲娅被授予沙特公民身份，成为世界首个获公民身份的机器人。 她能识别人类面部，理解语言，甚至还会“怼”人类：“你怎么知道你是人的？” 也许20年后，这样的高仿真机器人将和我们共同生活，你有什么期待和担心？
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-sm-6 col-md-6">
+                    <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>外文网站观点</h5>
+                        <!--<span class="label label-primary">Twitter</span>-->
+                        <div class="ibox-tools">
+                            <a class="collapse-link">
+                                <i class="fa fa-chevron-up"></i>
+                            </a>
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                <i class="fa fa-wrench"></i>
+                            </a>
+                            <a class="close-link">
+                                <i class="fa fa-times"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="ibox-content inspinia-timeline" id="opn_english" style="display: block;">
+                        <!--<h1>这里是内容</h1>-->
+                        <div class="content2" _v-2ad827a2="">
+                            <div class="mediaVue" _v-507a7011="" _v-2ad827a2="">
+                                <ul _v-507a7011="">
+                                    <li class="mediaLi" _v-507a7011="">
+                                        <div class="bang" _v-507a7011="">
+                                            <div class="bangjindu" _v-507a7011="" style="width: 100%;"></div>
+                                            <div class="content" _v-507a7011="">
+                                                <div class="left" _v-507a7011="" title="中立">
+                                                    <span _v-507a7011="">观点1</span>&nbsp;&nbsp;&nbsp;<span
+                                                        _v-507a7011="">（中立）：Saudi Arabia bestows citizenship on a robot named Sophia</span></div>
+                                                <div class="right" _v-507a7011=""><span class="num"
+                                                                                        _v-507a7011="">50%</span><span
+                                                        class="meiti" _v-507a7011=""></span></div>
+                                            </div>
+                                        </div>
+                                        <div class="mediaTop tipUl0"  _v-507a7011="" style="display: none;">
+                                            <div class="mediaTipVue"  _v-1bd7697a="" _v-507a7011=""
+                                                 style="top: 62px;">
+                                                Saudi Arabia bestows citizenship on a robot named Sophia
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="mediaLi" _v-507a7011="">
+                                        <div class="bang" _v-507a7011="">
+                                            <div class="bangjindu" _v-507a7011="" style="width: 28%;"></div>
+                                            <div class="content" _v-507a7011="">
+                                                <div class="left" _v-507a7011=""
+                                                     title="2018CES曝出IOD新品类 immers打造个人沉浸式“即刻娱乐”新品"><span _v-507a7011="">观点2</span>&nbsp;&nbsp;&nbsp;<span
+                                                        _v-507a7011="">（索菲亚权利更大）：Sophia , la robot saudí que tiene más derechos que las mujeres de Arabia Saudita（西班牙语：比沙特阿拉伯妇女更有权利的沙特机器人Sophia）</span>
+                                                </div>
+                                                <div class="right" _v-507a7011=""><span class="num"
+                                                                                        _v-507a7011="">14%</span><span
+                                                        class="meiti" _v-507a7011=""></span></div>
+                                            </div>
+                                        </div>
+                                        <div class="mediaTop tipUl1"  _v-507a7011="" style="display: none;">
+                                            <div class="mediaTipVue"  _v-1bd7697a="" _v-507a7011=""
+                                                 style="top: 62px;">
+                                                Sophia , la robot saudí que tiene más derechos que las mujeres de Arabia Saudita（西班牙语：比沙特阿拉伯妇女更有权利的沙特机器人Sophia）
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="mediaLi" _v-507a7011="">
+                                        <div class="bang" _v-507a7011="">
+                                            <div class="bangjindu" _v-507a7011="" style="width: 24%;"></div>
+                                            <div class="content" _v-507a7011="">
+                                                <div class="left" _v-507a7011="" title="中立"><span
+                                                        _v-507a7011="">观点3</span>&nbsp;&nbsp;&nbsp;<span _v-507a7011="">（中立）：.Meet Sophia , the first robot citizen of Saudi Arabia.</span>
+                                                </div>
+                                                <div class="right" _v-507a7011=""><span class="num"
+                                                                                        _v-507a7011="">12%</span><span
+                                                        class="meiti" _v-507a7011=""></span></div>
+                                            </div>
+                                        </div>
+                                        <div class="mediaTop tipUl2"  _v-507a7011="" style="display: none;">
+                                            <div class="mediaTipVue"  _v-1bd7697a="" _v-507a7011=""
+                                                 style="top: 62px;">
+                                                .Meet Sophia , the first robot citizen of Saudi Arabia.
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="mediaLi" _v-507a7011="">
+                                        <div class="bang" _v-507a7011="">
+                                            <div class="bangjindu" _v-507a7011="" style="width: 22%;"></div>
+                                            <div class="content" _v-507a7011="">
+                                                <div class="left" _v-507a7011=""
+                                                     title="中立"><span
+                                                        _v-507a7011="">观点4</span>&nbsp;&nbsp;&nbsp;<span _v-507a7011="">（中立）：Robot Sophia speaks at Saudi Arabia\'s Future Investment Initiative</span>
+                                                </div>
+                                                <div class="right" _v-507a7011=""><span class="num"
+                                                                                        _v-507a7011="">11%</span><span
+                                                        class="meiti" _v-507a7011=""></span></div>
+                                            </div>
+                                        </div>
+                                        <div class="mediaTop tipUl3"  _v-507a7011="" style="display: none;">
+                                            <div class="mediaTipVue"  _v-1bd7697a="" _v-507a7011=""
+                                                 style="top: 62px;">
+                                                Robot Sophia speaks at Saudi Arabia\'s Future Investment Initiative
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="mediaLi" _v-507a7011="">
+                                        <div class="bang" _v-507a7011="">
+                                            <div class="bangjindu" _v-507a7011="" style="width: 14%;"></div>
+                                            <div class="content" _v-507a7011="">
+                                                <div class="left" _v-507a7011="" title="愤慨"><span
+                                                        _v-507a7011="">观点5</span>&nbsp;&nbsp;&nbsp;<span _v-507a7011="">（愤慨）：People are outraged that Sophia the robot has more rights than most women in Saudi Arabia.</span>
+                                                </div>
+                                                <div class="right" _v-507a7011=""><span class="num"
+                                                                                        _v-507a7011="">7%</span><span
+                                                        class="meiti" _v-507a7011=""></span></div>
+                                            </div>
+                                        </div>
+                                        <div class="mediaTop tipUl4"  _v-507a7011="" style="display: none;">
+                                            <div class="mediaTipVue"  _v-1bd7697a="" _v-507a7011=""
+                                                 style="top: 62px;">
+                                                People are outraged that Sophia the robot has more rights than most women in Saudi Arabia.
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="mediaLi" _v-507a7011="">
+                                        <div class="bang" _v-507a7011="">
+                                            <div class="bangjindu" _v-507a7011="" style="width: 12%;"></div>
+                                            <div class="content" _v-507a7011="">
+                                                <div class="left" _v-507a7011=""
+                                                     title="闪联Linxee领视等成员闪耀2018 CES展 跨国黑科技获赞誉!"><span
+                                                        _v-507a7011="">观点6</span>&nbsp;&nbsp;&nbsp;<span _v-507a7011="">（中立）Saudi Arabia becomes first country to give citizenship to a robot named Sophia.</span>
+                                                </div>
+                                                <div class="right" _v-507a7011=""><span class="num"
+                                                                                        _v-507a7011="">6%</span><span
+                                                        class="meiti" _v-507a7011=""></span></div>
+                                            </div>
+                                        </div>
+                                        <div class="mediaTop tipUl5"  _v-507a7011="" style="display: none;">
+                                            <div class="mediaTipVue"  _v-1bd7697a="" _v-507a7011=""
+                                                 style="top: 62px;">
+                                                Saudi Arabia becomes first country to give citizenship to a robot named Sophia.
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row"> <!-- /.row -->
+            <div class="col-lg-12 col-sm-12 col-md-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>情感倾向</h5>
+                        <!--<span class="label label-primary">积极，消极，中立</span>-->
+                        <div class="ibox-tools">
+                            <a class="collapse-link">
+                                <i class="fa fa-chevron-up"></i>
+                            </a>
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                <i class="fa fa-wrench"></i>
+                            </a>
+                            <a class="close-link">
+                                <i class="fa fa-times"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="ibox-content inspinia-timeline" style="display: block;height: 1000px;">
+                        <!--<h1>这里是内容</h1>-->
+                        <div class="col-lg-7 col-sm-7 col-md-7">
+                            <div id="sentiment" style="width: 100%;height:440px;"></div>
+                            <!--<img src="${rc.contextPath}/statics/pic/sentiment.png" width="100%" height="auto">-->
+                        </div>
+                        <div class="col-lg-5 col-sm-5 col-md-5">
+                            <div id="four_sentiment" style="width: 120%;margin-left:-14%;height:200px;"></div>
+                            <div class="sentiment_title" style="margin-top:-40px;">
+                                <p id="weibo_sentiment">微博</p>
+                                <p id="weixin_sentiment">微信</p>
+                                <p id="wangmei_sentiment">网媒</p>
+                                <p id="twitter_sentiment">Twitter</p>
+                            </div>
+
+                            <table class="table table-striped" id="keywords_table" style="margin-top: 30px;">
+                                <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>积极</th>
+                                    <th>中立</th>
+                                    <th>消极</th>
+                                    <!--<th>次数</th>-->
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>微博</td>
+                                    <td>1%</td>
+                                    <td>26%</td>
+                                    <td style="color: #ff0402">73%</td>
+                                    <!--<td>4307</td>-->
+                                </tr>
+                                <tr>
+                                    <td>微信</td>
+                                    <td>1%</td>
+                                    <td style="color: #ff0402">59%</td>
+                                    <td>40%</td>
+                                    <!--<td>4099</td>-->
+                                </tr>
+                                <tr>
+                                    <td>网媒</td>
+                                    <td>1%</td>
+                                    <td style="color: #ff0402">78%</td>
+                                    <td>21%</td>
+                                    <!--<td>3453</td>-->
+                                </tr>
+                                <tr>
+                                    <td>Twitter</td>
+                                    <td>2%</td>
+                                    <td style="color: #ff0402">77%</td>
+                                    <td>21%</td>
+                                    <!--<td>2348</td>-->
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col-lg-12 col-sm-12 col-md-12" style="margin-top: 60px;">
+                            <div class="col-lg-6 col-sm-6 col-md-6">
+                                <ul class="stat-list">
+                                    <p  style="font-size: 20px;font-weight: bold;" >微博</p>
+                                    <li>
+                                        <!--<h2 class="no-margins">消极</h2>-->
+                                        <small style="font-size: 16px;">消极：回怼、人不犯我，我不犯人、细思极恐、背后发凉、可怕、恐慌、吃惊</small>
+                                        <div class="stat-percent" style="margin-right: 20px;font-size: 16px;">73% </div>
+                                        <div class="progress progress-mini">
+                                            <div style="width: 73%;" class="progress-bar"></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <!--<h2 class="no-margins ">中立</h2>-->
+                                        <small style="font-size: 16px;">中立：首个、人工智能、科技</small>
+                                        <div class="stat-percent" style="margin-right: 20px;font-size: 16px;">26% </div>
+                                        <div class="progress progress-mini">
+                                            <div style="width: 26%;" class="progress-bar"></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <!--<h2 class="no-margins ">积极</h2>-->
+                                        <small style="font-size: 16px;">积极：美女</small>
+                                        <div class="stat-percent" style="margin-right: 20px;font-size: 16px;">1% </div>
+                                        <div class="progress progress-mini">
+                                            <div style="width: 1%;" class="progress-bar"></div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-6 col-sm-6 col-md-6">
+                                <ul class="stat-list">
+                                    <p  style="font-size: 20px;font-weight: bold;" >微信</p>
+                                    <li>
+                                        <!--<h2 class="no-margins">消极</h2>-->
+                                        <small style="font-size: 16px;">消极：细思极恐、人不犯我，我不犯人、互怼、人类社会的终结者、恐怖、脊背发凉</small>
+                                        <div class="stat-percent" style="margin-right: 20px;font-size: 16px;">40% </div>
+                                        <div class="progress progress-mini">
+                                            <div style="width: 40%;" class="progress-bar"></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <!--<h2 class="no-margins ">中立</h2>-->
+                                        <small style="font-size: 16px;">中立：史上第一个、全球首位、人工智能、共同工作生活</small>
+                                        <div class="stat-percent" style="margin-right: 20px;font-size: 16px;">59% </div>
+                                        <div class="progress progress-mini">
+                                            <div style="width: 59%;" class="progress-bar"></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <!--<h2 class="no-margins ">积极</h2>-->
+                                        <small style="font-size: 16px;">积极：美女机器人</small>
+                                        <div class="stat-percent" style="margin-right: 20px;font-size: 16px;">1% </div>
+                                        <div class="progress progress-mini">
+                                            <div style="width: 1%;" class="progress-bar"></div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-12 col-sm-12 col-md-12" style="margin-top: 60px;">
+                            <div class="col-lg-6 col-sm-6 col-md-6">
+                                <ul class="stat-list">
+                                    <p  style="font-size: 20px;font-weight: bold;">网媒</p>
+                                    <li>
+                                        <!--<h2 class="no-margins">消极</h2>-->
+                                        <small style="font-size: 16px;">消极：可怕、人类被取代、人不犯我，我不犯人、回怼</small>
+                                        <div class="stat-percent" style="margin-right: 20px;font-size: 16px;">21% </div>
+                                        <div class="progress progress-mini">
+                                            <div style="width: 21%;" class="progress-bar"></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <!--<h2 class="no-margins ">中立</h2>-->
+                                        <small style="font-size: 16px;">中立：史上首次、世界首例、公民身份</small>
+                                        <div class="stat-percent" style="margin-right: 20px;font-size: 16px;">78% </div>
+                                        <div class="progress progress-mini">
+                                            <div style="width: 78%;" class="progress-bar"></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <!--<h2 class="no-margins ">积极</h2>-->
+                                        <small style="font-size: 16px;">积极：美女</small>
+                                        <div class="stat-percent" style="margin-right: 20px;font-size: 16px;">1% </div>
+                                        <div class="progress progress-mini">
+                                            <div style="width: 1%;" class="progress-bar"></div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-6 col-sm-6 col-md-6">
+                                <ul class="stat-list">
+                                    <p  style="font-size: 20px;font-weight: bold;">Twitter</p>
+                                    <li>
+                                        <!--<h2 class="no-margins">消极</h2>-->
+                                        <small style="font-size: 16px;">消极：outrage、has more rights than most women in Saudi Arabia、scary</small>
+                                        <div class="stat-percent" style="margin-right: 20px;font-size: 16px;">21% </div>
+                                        <div class="progress progress-mini">
+                                            <div style="width: 21%;" class="progress-bar"></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <!--<h2 class="no-margins ">中立</h2>-->
+                                        <small style="font-size: 16px;">中立：first country、first robot、citizenship</small>
+                                        <div class="stat-percent" style="margin-right: 20px;font-size: 16px;">77% </div>
+                                        <div class="progress progress-mini">
+                                            <div style="width: 77%;" class="progress-bar"></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <!--<h2 class="no-margins ">积极</h2>-->
+                                        <small style="font-size: 16px;">积极：beautiful、cool、intelligent</small>
+                                        <div class="stat-percent" style="margin-right: 20px;font-size: 16px;">2% </div>
+                                        <div class="progress progress-mini">
+                                            <div style="width: 2%;" class="progress-bar"></div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $(".content1 ul").find('li').eq(0).mouseover(function(){
+            var high = 62;
+            $('.content1 .tipUl0').find('div').css("top",""+high+"px");
+            $('.content1 .tipUl0').css("display","block");
+
+        });
+        $(".content1 ul").find('li').eq(0).mouseout(function(){
+            $('.content1 .tipUl0').css("display","none");
+        });
+
+        $(".content1 ul").find('li').eq(1).mouseover(function(){
+            var high = 62+71*1;
+            $('.content1 .tipUl1').find('div').css("top",""+high+"px");
+            $('.content1 .tipUl1').css("display","block");
+        });
+        $(".content1 ul").find('li').eq(1).mouseout(function(){
+            $('.content1 .tipUl1').css("display","none");
+        });
+
+        $(".content1 ul").find('li').eq(2).mouseover(function(){
+            var high = 62+71*2;
+            $('.content1 .tipUl2').find('div').css("top",""+high+"px");
+            $('.content1 .tipUl2').css("display","block");
+        });
+        $(".content1 ul").find('li').eq(2).mouseout(function(){
+            $('.content1 .tipUl2').css("display","none");
+        });
+
+        $(".content1 ul").find('li').eq(3).mouseover(function(){
+            var high = 62+71*3-10;
+            $('.content1 .tipUl3').find('div').css("top",""+high+"px");
+            $('.content1 .tipUl3').css("display","block");
+        });
+        $(".content1 ul").find('li').eq(3).mouseout(function(){
+            $('.content1 .tipUl3').css("display","none");
+        });
+
+        $(".content1 ul").find('li').eq(4).mouseover(function(){
+            var high = 62+71*4;
+            $('.content1 .tipUl4').find('div').css("top",""+high+"px");
+            $('.content1 .tipUl4').css("display","block");
+        });
+        $(".content1 ul").find('li').eq(4).mouseout(function(){
+            $('.content1 .tipUl4').css("display","none");
+        });
+
+        $(".content1 ul").find('li').eq(5).mouseover(function(){
+            var high = 62+71*5-200;
+            $('.content1 .tipUl5').find('div').css("top",""+high+"px");
+            $('.content1 .tipUl5').css("display","block");
+        });
+        $(".content1 ul").find('li').eq(5).mouseout(function(){
+            $('.content1 .tipUl5').css("display","none");
+        });
+
+        /*********第二个内容***************/
+        $(".content2 ul").find('li').eq(0).mouseover(function(){
+            var high = 62;
+            $('.content2 .tipUl0').find('div').css("top",""+high+"px");
+            $('.content2 .tipUl0').css("display","block");
+
+        });
+        $(".content2 ul").find('li').eq(0).mouseout(function(){
+            $('.content2 .tipUl0').css("display","none");
+        });
+
+        $(".content2 ul").find('li').eq(1).mouseover(function(){
+            var high = 62+71*1;
+            $('.content2 .tipUl1').find('div').css("top",""+high+"px");
+            $('.content2 .tipUl1').css("display","block");
+        });
+        $(".content2 ul").find('li').eq(1).mouseout(function(){
+            $('.content2 .tipUl1').css("display","none");
+        });
+
+        $(".content2 ul").find('li').eq(2).mouseover(function(){
+            var high = 62+71*2;
+            $('.content2 .tipUl2').find('div').css("top",""+high+"px");
+            $('.content2 .tipUl2').css("display","block");
+        });
+        $(".content2 ul").find('li').eq(2).mouseout(function(){
+            $('.content2 .tipUl2').css("display","none");
+        });
+
+        $(".content2 ul").find('li').eq(3).mouseover(function(){
+            var high = 62+71*3;
+            $('.content2 .tipUl3').find('div').css("top",""+high+"px");
+            $('.content2 .tipUl3').css("display","block");
+        });
+        $(".content2 ul").find('li').eq(3).mouseout(function(){
+            $('.content2 .tipUl3').css("display","none");
+        });
+
+        $(".content2 ul").find('li').eq(4).mouseover(function(){
+            var high = 62+71*4;
+            $('.content2 .tipUl4').find('div').css("top",""+high+"px");
+            $('.content2 .tipUl4').css("display","block");
+        });
+        $(".content2 ul").find('li').eq(4).mouseout(function(){
+            $('.content2 .tipUl4').css("display","none");
+        });
+
+        $(".content2 ul").find('li').eq(5).mouseover(function(){
+            var high = 62+71*5-100;
+            $('.content2 .tipUl5').find('div').css("top",""+high+"px");
+            $('.content2 .tipUl5').css("display","block");
+        });
+        $(".content2 ul").find('li').eq(5).mouseout(function(){
+            $('.content2 .tipUl5').css("display","none");
+        });
+
+    });
+</script>
+    <script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('sentiment'));
+
+        var option = {
+            tooltip: {
+                trigger: 'axis',
+                axisPointer: {
+                    type: 'shadow'
+                }
+            },
+            toolbox:{
+                feature: {
+                    dataView: {show: true, readOnly: false},
+                    saveAsImage: {show: true}
+                }
+            },
+            legend: {
+                data: ['微博', '微信','网媒','Twitter'],
+                textStyle: {fontSize: 16}
+            },
+            grid: {
+                left: '3%',
+                right: '4%',
+                bottom: '3%',
+                containLabel: true
+            },
+            xAxis: {
+                type: 'value',
+                axisLabel:{
+                    formatter: function(val){
+                        return val + '%';
+                    },
+                    textStyle:{
+                        fontSize:16
+                    }
+                },
+                boundaryGap: [0, 0.01]
+            },
+            yAxis: {
+                type: 'category',
+                data: ['积极','中立','消极']
+            },
+            series: [
+                {
+                    name: '微博',
+                    type: 'bar',
+                    data: [1, 26, 73]
+                },
+                {
+                    name: '微信',
+                    type: 'bar',
+                    data: [1, 59, 40]
+                },
+                {
+                    name: '网媒',
+                    type: 'bar',
+                    data: [1, 78, 21]
+                },
+                {
+                    name: 'Twitter',
+                    type: 'bar',
+                    data: [2, 77, 21]
+                }
+            ],
+            animation: true,
+            animationDuration: 4000
+        };
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+        window.onresize = myChart.resize;
+    </script>
+    <script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart1 = echarts.init(document.getElementById('four_sentiment'));
+
+        var option1 = {
+            tooltip : {
+                trigger: 'item',
+                formatter: "{a} {b} :{d}%",
+                textStyle: {
+                    fontSize:14
+                }
+            },
+            legend: {
+                left: 'center',
+                data: ['积极','消极','中立'],
+                textStyle: {fontSize: 15}
+            },
+            toolbox: {
+                show: true,
+                orient: 'vertical',
+                left: 'right',
+                top: 'center',
+                feature: {
+                    dataView: {readOnly: false},
+                    restore: {},
+                    saveAsImage: {}
+                }
+            },
+            series : [
+                {
+                    name: '微博',
+                    type: 'pie',
+                    //roseType:'radius',
+                    radius : '45%',
+                    center: ['18%', '50%'],
+                    data:[
+                        {value:1, name:'积极'},
+                        {value:73, name:'消极'},
+                        {value:26, name:'中立'},
+                        /*{value:335, name:'3'},
+                        {value:1548, name:'4'},
+                        {value:1548, name:'5'}*/
+                    ],
+                    label: {
+                        normal: {
+                            position: 'inner',
+                            formatter: ' ',
+                            textStyle: {
+                                color: '#ffffff',
+                                fontSize: 14
+                            }
+                        }
+                    },
+                    itemStyle: {
+                        emphasis: {
+                            shadowBlur: 10,
+                            shadowOffsetX: 0,
+                            shadowColor: 'rgba(0, 0, 0, 0.5)'
+                        }
+                    }
+                },
+                {
+                    name: '微信',
+                    type: 'pie',
+                    radius : '45%',
+                    center: ['40%', '50%'],
+                    data:[
+                        {value:1, name:'积极'},
+                        {value:40, name:'消极'},
+                        {value:59, name:'中立'},
+                        /*{value:335, name:'3'},
+                        {value:1548, name:'4'}*/
+                    ],
+                    label: {
+                        normal: {
+                            position: 'inner',
+                            formatter: '',
+                            offset: [,100],
+                            textStyle: {
+                                color: '#ffffff',
+                                fontSize: 14
+                            }
+                        }
+                    },
+                    itemStyle: {
+                        emphasis: {
+                            shadowBlur: 10,
+                            shadowOffsetX: 0,
+                            shadowColor: 'rgba(0, 0, 0, 0.5)'
+                        }
+                    }
+                },
+                {
+                    name: '网媒',
+                    type: 'pie',
+                    //roseType:'radius',
+                    radius : '45%',
+                    center: ['62%', '50%'],
+                    data:[
+                        {value:1, name:'积极'},
+                        {value:21, name:'消极'},
+                        {value:78, name:'中立'},
+                        /*{value:335, name:'3'},
+                        {value:1548, name:'4'},
+                        {value:1548, name:'5'}*/
+                    ],
+                    label: {
+                        normal: {
+                            position: 'inner',
+                            formatter: '',
+                            textStyle: {
+                                color: '#ffffff',
+                                fontSize: 14
+                            }
+                        }
+                    },
+                    itemStyle: {
+                        emphasis: {
+                            shadowBlur: 10,
+                            shadowOffsetX: 0,
+                            shadowColor: 'rgba(0, 0, 0, 0.5)'
+                        }
+                    }
+                },
+                {
+                    name: 'Twitter',
+                    type: 'pie',
+                    //roseType:'radius',
+                    radius : '45%',
+                    center: ['84%', '50%'],
+                    data:[
+                        {value:2, name:'积极'},
+                        {value:21, name:'消极'},
+                        {value:77, name:'中立'},
+                        /*{value:335, name:'3'},
+                        {value:1548, name:'4'},
+                        {value:1548, name:'5'}*/
+                    ],
+                    label: {
+                        normal: {
+                            position: 'inner',
+                            formatter: '',
+                            textStyle: {
+                                color: '#ffffff',
+                                fontSize: 14
+                            }
+                        }
+                    },
+                    itemStyle: {
+                        emphasis: {
+                            shadowBlur: 10,
+                            shadowOffsetX: 0,
+                            shadowColor: 'rgba(0, 0, 0, 0.5)'
+                        }
+                    }
+                },
+
+            ],
+        };
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart1.setOption(option1);
+        window.onresize = myChart1.resize;
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            var h=$("#opn_english").height();
+            $("#opn_chinese").height(h);
+        });
+        $(window).resize(function(){
+            var h=$("#opn_english").height();
+            $("#opn_chinese").height(h);
+        });
+    </script>
+</div>
+</body>
+</html>

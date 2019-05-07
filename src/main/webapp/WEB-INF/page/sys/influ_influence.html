@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>传播影响力</title>
+    #parse("sys/mulheader.html")
+    <link rel="stylesheet" href="${rc.contextPath}/statics/css/bigdata-style.css">
+    <script src="${rc.contextPath}/statics/libs/echarts.min.js"></script>
+</head>
+<body>
+<div id="wrapper">
+    <div class="wrapper wrapper-content">
+        <div class="row"> <!-- /.row -->
+            <!--传播趋势图-->
+            <div class="col-lg-12 col-sm-12 col-md-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>高影响力用户统计</h5>
+                        <span class="label label-primary"></span>
+                        <div class="ibox-tools">
+                            <a class="collapse-link">
+                                <i class="fa fa-chevron-up"></i>
+                            </a>
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                <i class="fa fa-wrench"></i>
+                            </a>
+                            <a class="close-link">
+                                <i class="fa fa-times"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="ibox-content inspinia-timeline" style="display: block;height: 300px">
+                        <div id="main1" style="width: 33%;height:350px;float: left"></div>
+                        <div id="main2" style="width: 33%;height:350px;float: left"></div>
+                        <div id="main3" style="width: 33%;height:350px;float: right"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row"> <!-- /.row -->
+            <!--传播趋势图-->
+            <div class="col-lg-12 col-sm-12 col-md-12" style="margin-top: -40px;">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>微博高影响力用户影响指数图</h5>
+
+                        <div class="ibox-tools">
+                            <a class="collapse-link">
+                                <i class="fa fa-chevron-up"></i>
+                            </a>
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                <i class="fa fa-wrench"></i>
+                            </a>
+                            <a class="close-link">
+                                <i class="fa fa-times"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="ibox-content inspinia-timeline" style="display: block;">
+                        <div id="main4" style="width: 100%;height:450px;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--&lt;!&ndash;test部分&ndash;&gt;-->
+        <!--<div class="row">-->
+        <!--<div class="col-lg-6 col-sm-6 col-md-6">-->
+        <!--<div class="tabs-container">-->
+        <!--<ul class="nav nav-tabs">-->
+        <!--<li class=""><a data-toggle="tab" href="tabs.html#tab-1" aria-expanded="false"> This is tab</a></li>-->
+        <!--<li class="active"><a data-toggle="tab" href="tabs.html#tab-2" aria-expanded="true">This is second tab</a></li>-->
+        <!--</ul>-->
+        <!--<div class="tab-content">-->
+        <!--<div id="tab-1" class="tab-pane">-->
+        <!--<div class="panel-body">-->
+        <!--<strong>Lorem ipsum dolor sit amet, consectetuer adipiscing</strong>-->
+        <!--<p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of-->
+        <!--existence in this spot, which was created for the bliss of souls like mine.</p>-->
+        <!--<p>I am so happy, my dear friend, so absorbed in the exquisite sense of mere tranquil existence, that I neglect my talents. I should be incapable of drawing a single stroke at-->
+        <!--the present moment; and yet I feel that I never was a greater artist than now. When.</p>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--<div id="tab-2" class="tab-pane active">-->
+        <!--<div class="panel-body">-->
+        <!--<strong>Donec quam felis</strong>-->
+        <!--<p>Thousand unknown plants are noticed by me: when I hear the buzz of the little world among the stalks, and grow familiar with the countless indescribable forms of the insects-->
+        <!--and flies, then I feel the presence of the Almighty, who formed us in his own image, and the breath </p>-->
+        <!--<p>I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend, so absorbed in the exquisite-->
+        <!--sense of mere tranquil existence, that I neglect my talents. I should be incapable of drawing a single stroke at the present moment; and yet.</p>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--</div>-->
+    </div>
+</div>
+<script type="text/javascript">
+    var myChart1 = echarts.init(document.getElementById('main1'));
+
+    // 指定图表的配置项和数据
+    var option1 = {
+        title: {
+            text: '微信',
+//            subtext: 'Top7',
+            left: 'center'
+        },
+        /* toolbox: {
+         show: true,
+         feature: {
+         dataView:{
+         show:true
+         },
+         restore:{
+         show:true
+         },
+         dataZoom:{
+         show:true
+         },
+         saveAsImage: {
+         show: true
+         },
+         magicType: {
+         type: ['line', 'bar']
+         }
+         }
+         },*/
+        tooltip: {
+            trigger: 'item',
+            formatter: "{a} <br/>{b}: {c} ({d}%)"
+        },
+        legend: {
+            orient: 'vertical',
+            x: 'left',
+            data:['钱江晚报','人民日报','长沙警事','警探','辽宁晚报','佛山日报','佛犁我的家'],
+            textStyle: {
+                fontSize: 15 // 用 legend.textStyle.fontSize 更改示例大小
+            }
+        },
+        series: [
+            {
+                name:'文章阅读量',
+                type:'pie',
+                radius: ['45%', '60%'],
+                center: ['55%', '40%'],
+                selectedMode: 'single',
+                avoidLabelOverlap: false,
+                label: {
+                    normal: {
+                        show: false,
+                        position: 'center'
+                    },
+                    emphasis: {
+                        show: true,
+                        textStyle: {
+                            fontSize: '30',
+                            fontWeight: 'bold'
+                        }
+                    }
+                },
+                labelLine: {
+                    normal: {
+                        show: false
+                    }
+                },
+                data:[
+                    {value:21284, name:'钱江晚报'},
+                    {value:100000, name:'人民日报'},
+                    {value:16808, name:'长沙警事'},
+                    {value:29675, name:'警探'},
+                    {value:22471, name:'辽宁晚报'},
+                    {value:17726, name:'佛山日报'},
+                    {value:10926, name:'佛犁我的家'}
+
+                ]
+            },
+
+        ]
+    };
+
+
+
+    var myChart2 = echarts.init(document.getElementById('main2'));
+
+    // 指定图表的配置项和数据
+    var option2 = {
+        title: {
+            text: '网媒',
+//            subtext: 'Top5',
+            left: 'center'
+        },
+        /*  toolbox: {
+         show: true,
+         feature: {
+         dataView:{
+         show:true
+         },
+         restore:{
+         show:true
+         },
+         dataZoom:{
+         show:true
+         },
+         saveAsImage: {
+         show: true
+         },
+         magicType: {
+         type: ['line', 'bar']
+         }
+         }
+         },*/
+        tooltip: {
+            trigger: 'item',
+            formatter: "{a} <br/>{b}: {c} ({d}%)"
+        },
+        legend: {
+            orient: 'vertical',
+            x: 'left',
+            data:['搜狐','网易新闻','光明网','新华网','新民网'],
+            textStyle: {
+                fontSize: 15 // 用 legend.textStyle.fontSize 更改示例大小
+            }
+        },
+        series: [
+            {
+                name:'发布新闻数量',
+                type:'pie',
+                radius: ['45%', '60%'],
+                center: ['55%', '40%'],
+                selectedMode: 'single',
+                avoidLabelOverlap: false,
+                label: {
+                    normal: {
+                        show: false,
+                        position: 'center'
+                    },
+                    emphasis: {
+                        show: true,
+                        textStyle: {
+                            fontSize: '30',
+                            fontWeight: 'bold'
+                        }
+                    }
+                },
+                labelLine: {
+                    normal: {
+                        show: false
+                    }
+                },
+                data:[
+                    {value:20, name:'搜狐'},
+                    {value:19, name:'网易新闻'},
+                    {value:12, name:'光明网'},
+                    {value:12, name:'新华网'},
+                    {value:11, name:'新民网'}
+
+                ]
+            },
+
+        ]
+    };
+    var myChart3 = echarts.init(document.getElementById('main3'));
+
+    // 指定图表的配置项和数据
+    var option3 = {
+        title: {
+            text: '微博',
+//            subtext: 'Top8',
+            left: 'center'
+        },
+        /*  toolbox: {
+         show: true,
+         feature: {
+         dataView:{
+         show:true
+         },
+         restore:{
+         show:true
+         },
+         dataZoom:{
+         show:true
+         },
+         saveAsImage: {
+         show: true
+         },
+         magicType: {
+         type: ['line', 'bar']
+         }
+         }
+         },*/
+        tooltip: {
+            trigger: 'item',
+            formatter: "{a} <br/>{b}: {c} ({d}%)"
+        },
+        legend: {
+            orient: 'vertical',
+            x: 'left',
+            data:['微博管理员','公安部打黑除四害','新浪四川','济南公安','新浪天津','政府微博助理','娱八婆(谣言)','菏泽中院']
+       ,textStyle: {
+                fontSize: 16 // 用 legend.textStyle.fontSize 更改示例大小
+            } },
+        series: [
+            {
+                name:'影响力因子',
+                type:'pie',
+                radius: ['45%', '60%'],
+                center: ['55%', '40%'],
+                selectedMode: 'single',
+                avoidLabelOverlap: false,
+                label: {
+                    normal: {
+                        show: false,
+                        position: 'center'
+                    },
+                    emphasis: {
+                        show: true,
+                        textStyle: {
+                            fontSize: '30',
+                            fontWeight: 'bold'
+                        }
+                    }
+                },
+                labelLine: {
+                    normal: {
+                        show: false
+                    }
+                },
+                data:[
+                    {value:0.70, name:'微博管理员'},
+                    {value:0.59, name:'公安部打黑除四害'},
+                    {value:0.40, name:'新浪四川'},
+                    {value:0.38, name:'济南公安'},
+                    {value:0.28, name:'新浪天津'},
+                    {value:0.21, name:'政府微博助理'},
+                    {value:0.183, name:'娱八婆(谣言)'},
+                    {value:0.182, name:'菏泽中院'}
+
+                ]
+            }
+        ]
+    };
+
+    // 使用刚指定的配置项和数据显示图表。
+    myChart3.setOption(option3);
+    window.onresize = myChart3.resize;
+    myChart1.setOption(option1);
+    window.onresize = myChart1.resize;
+    myChart2.setOption(option2);
+    window.onresize = myChart2.resize;
+</script>
+<script type="text/javascript">
+    var myChart4 = echarts.init(document.getElementById('main4'));
+
+    // 指定图表的配置项和数据
+    var base = +new Date(2016,3,11,7);
+    var oneHour = 3600 * 1000;
+    var date = [];
+    var data1 = [0,0,0,0,0,0,0,153,99,55,26,14,16,18,5,9,4,0,0,0,0,0,0,3,2,10,17,9,0,0,5,7,10,8,5,3,0,2,0,1,2,0,0,0,0,0,0,0,0,2,7,2,1,1,1,3,4,3,1,0,1,0,0,0,0,0,2,0,0,0,0,0,0,0,1,1,0,0,1,1,1,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,];
+    var data2 = [0,0,0,0,15,9,13,11,6,2,4,5,1,0,5,6,1,0,0,0,0,0,0,1,3,1,1,6,2,0,1,1,5,2,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,2,0,0,0,0,1,0,0,0,0,0,];
+    var data3 = [0,0,0,0,56,84,40,29,21,45,12,4,9,4,3,0,3,3,1,0,0,0,0,1,0,0,1,3,1,1,0,2,2,1,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,11,9,1,0,0,0,2,3,0,2,0,1,0,0,1,0,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,2,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,2,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,];
+    var data4 = [0,0,0,0,0,0,0,144,225,91,53,36,28,21,17,13,8,15,2,1,1,0,0,0,1,3,1,3,1,2,2,1,2,0,2,2,1,0,2,1,1,0,0,0,0,0,0,0,3,1,1,0,0,0,2,0,4,0,1,0,1,0,0,0,1,1,0,0,0,0,0,0,0,0,0,1,0,1,3,0,0,0,0,2,2,2,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1,1,2,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,];
+    var data5 = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,98,164,108,19,8,2,3,1,1,8,15,4,6,9,5,0,8,4,2,0,2,0,1,0,1,0,0,1,0,0,0,0,0,0,0,1,0,0,0,1,1,0,0,0,0,0,1,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,];
+    var data6 = [0,0,0,0,11,13,6,5,6,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,];
+    var data7 = [0,0,0,0,0,0,0,0,0,89,116,74,43,25,33,23,12,3,2,0,0,2,2,5,7,9,2,1,3,4,7,3,3,2,3,3,3,4,4,1,4,0,0,0,0,0,0,0,0,0,0,0,1,0,3,0,0,0,0,1,2,0,0,2,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,1,1,0,2,0,1,0,1,0,0,0,0,0,0,0,0,0,2,0,1,2,0,1,0,0,1,1,1,1,2,0,0,0,0,0,1,0,1,0,1,0,2,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,1,1,0,0,0,0,1,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,];
+    var data8 = [0,0,0,0,0,0,0,0,0,2,5,3,5,1,3,1,5,0,0,0,0,0,0,1,3,12,17,18,8,3,2,4,3,2,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,3,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,];
+    var data9 = [1,	37,	3,	2,	4,	0,	2,	1,	4,	0,	3,	0,	1,	1,	0,	0,	2,	0,	0,	0,	0,	0,	0,	0,	1,	1,	0,	0,	0,	1,	0,	0,	0,	0,	1,	0,	0,	0,	1,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	1,	0,	1,	0,	0,	0,	1,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	1,	1,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,];
+    for (var i = 0; i < data1.length; i++) {
+        var now = new Date(base += oneHour);
+        date.push([now.getFullYear(), now.getMonth()+1, now.getDate()].join('/')+' '+now.getHours()+'时');
+    }
+
+    option4 = {
+        tooltip: {
+            trigger: 'axis',
+            position: function (pt) {
+                return [pt[0], '10%'];
+            }
+        },
+        legend: {
+            //orient: 'vertical',
+            x: 'center',
+            data:['公安部打四黑除四害','菏泽中院','济南公安','微博管理员','新浪四川','新浪天津','政府微博助理','娱八婆(谣言)']
+            ,textStyle: {
+                fontSize: 15 // 用 legend.textStyle.fontSize 更改示例大小
+            } },
+        title: {
+            left: 'center',
+      //      text: '微博高影响力用户引发传播图',
+        },
+
+
+        xAxis: {
+            type: 'category',
+            boundaryGap: false,
+            data: date
+        },
+        yAxis: {
+            type: 'value',
+            boundaryGap: [0, '40%']
+        },
+        dataZoom: [{
+            type: 'inside',
+            start: 0,
+            end: 50
+        }, {
+            start: 0,
+            end: 10,
+            handleIcon: 'M10.7,11.9v-1.3H9.3v1.3c-4.9,0.3-8.8,4.4-8.8,9.4c0,5,3.9,9.1,8.8,9.4v1.3h1.3v-1.3c4.9-0.3,8.8-4.4,8.8-9.4C19.5,16.3,15.6,12.2,10.7,11.9z M13.3,24.4H6.7V23h6.6V24.4z M13.3,19.6H6.7v-1.4h6.6V19.6z',
+            handleSize: '80%',
+            handleStyle: {
+                color: '#fff',
+                shadowBlur: 3,
+                shadowColor: 'rgba(0, 0, 0, 0.6)',
+                shadowOffsetX: 2,
+                shadowOffsetY: 2
+            }
+        }],
+        series: [
+            {
+                name:'公安部打四黑除四害',
+                type:'line',
+                smooth:true,
+                symbol: 'none',
+                sampling: 'average',
+                itemStyle: {
+                    normal: {
+                        color: 'rgb(100, 100, 100)'
+                    }
+                },
+                areaStyle: {
+                    normal: {
+                        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                            offset: 0,
+                            color: 'rgb(255, 255, 255)'
+                        }, {
+                            offset: 1,
+                            color: 'rgb(255, 255, 255)'
+                        }])
+                    }
+                },
+                data: data1
+            },
+            {
+                name:'菏泽中院',
+                type:'line',
+                smooth:true,
+                symbol: 'none',
+                sampling: 'average',
+                itemStyle: {
+                    normal: {
+                        color: 'rgb(0, 255, 255)'
+                    }
+                },
+                areaStyle: {
+                    normal: {
+                        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                            offset: 0,
+                            color: 'rgb(255, 255, 255)'
+                        }, {
+                            offset: 1,
+                            color: 'rgb(255, 255, 255)'
+                        }])
+                    }
+                },
+                data: data2
+            },
+            {
+                name:'济南公安',
+                type:'line',
+                smooth:true,
+                symbol: 'none',
+                sampling: 'average',
+                itemStyle: {
+                    normal: {
+                        color: 'rgb(0, 255, 0)'
+                    }
+                },
+                areaStyle: {
+                    normal: {
+                        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                            offset: 0,
+                            color: 'rgb(255, 255, 255)'
+                        }, {
+                            offset: 1,
+                            color: 'rgb(255, 255, 255)'
+                        }])
+                    }
+                },
+                data: data3
+            },
+            {
+                name:'微博管理员',
+                type:'line',
+                smooth:true,
+                symbol: 'none',
+                sampling: 'average',
+                itemStyle: {
+                    normal: {
+                        color: '#EE7600'
+                    }
+                },
+                areaStyle: {
+                    normal: {
+                        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                            offset: 0,
+                            color: 'rgb(255, 255, 255)'
+                        }, {
+                            offset: 1,
+                            color: 'rgb(255,255, 255)'
+                        }])
+                    }
+                },
+                data: data4
+            },
+            {
+                name:'新浪四川',
+                type:'line',
+                smooth:true,
+                symbol: 'none',
+                sampling: 'average',
+                itemStyle: {
+                    normal: {
+                        color: 'rgb(200,200, 200)'
+                    }
+                },
+                areaStyle: {
+                    normal: {
+                        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                            offset: 0,
+                            color: 'rgb(255, 255, 255)'
+                        }, {
+                            offset: 1,
+                            color: 'rgb(255, 255, 255)'
+                        }])
+                    }
+                },
+                data: data5
+            },
+            {
+                name:'新浪天津',
+                type:'line',
+                smooth:true,
+                symbol: 'none',
+                sampling: 'average',
+                itemStyle: {
+                    normal: {
+                        color: 'rgb(160, 32, 240)'
+                    }
+                },
+                areaStyle: {
+                    normal: {
+                        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                            offset: 0,
+                            color: 'rgb(255, 255, 255)'
+                        }, {
+                            offset: 1,
+                            color: 'rgb(255, 255, 255)'
+                        }])
+                    }
+                },
+                data: data6
+            },
+            {
+                name:'娱八婆(谣言)',
+                type:'line',
+                smooth:true,
+                symbol: 'none',
+                sampling: 'average',
+                itemStyle: {
+                    normal: {
+                        color: 'rgb(255, 0, 0)'
+                    }
+                },
+                areaStyle: {
+                    normal: {
+                        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                            offset: 0,
+                            color: 'rgb(255, 255, 255)'
+                        }, {
+                            offset: 1,
+                            color: 'rgb(255, 255, 255)'
+                        }])
+                    }
+                },
+                data: data7
+            },
+            {
+                name:'政府微博助理',
+                type:'line',
+                smooth:true,
+                symbol: 'none',
+                sampling: 'average',
+                itemStyle: {
+                    normal: {
+                        color: 'rgb(139, 0, 0)'
+                    }
+                },
+                areaStyle: {
+                    normal: {
+                        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                            offset: 0,
+                            color: 'rgb(255,255,255)'
+                        }, {
+                            offset: 1,
+                            color: 'rgb(255,255,255)'
+                        }])
+                    }
+                },
+                data: data8
+            },
+
+        ]
+    };
+
+
+    // 使用刚指定的配置项和数据显示图表。
+    myChart4.setOption(option4);
+    window.onresize = myChart4.resize;
+</script>
+</body>
+</html>

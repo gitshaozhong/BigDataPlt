@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>谣言检测</title>
+    #parse("sys/mulheader.html")
+    <link rel="stylesheet" href="${rc.contextPath}/statics/css/bigdata-style.css">
+    <script src='${rc.contextPath}/statics/libs/echarts.simple.js'></script>
+    <script src="${rc.contextPath}/statics/libs/echarts-wordcloud.js"></script>
+    <link rel="stylesheet" href="${rc.contextPath}/statics/css/dataTables/datatables.min.css">
+    <script src="${rc.contextPath}/statics/libs/datatables.min.js"></script>
+    <style type="text/css">
+        #keywords_table tr td,th{
+            font-size: 18px;
+        }
+        #keywords_table1 tr td,th{
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+<div class="row">
+    <div class="col-lg-12 col-sm-12 col-md-12">
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <h5>其他事件</h5>
+                <div class="ibox-tools">
+                    <a class="collapse-link">
+                        <i class="fa fa-chevron-up"></i>
+                    </a>
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="table_basic.html#">
+                        <i class="fa fa-wrench"></i>
+                    </a>
+                    <a class="close-link">
+                        <i class="fa fa-times"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="ibox-content" style="height: 530px;">
+                <table class="table table-striped" id="keywords_table">
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>事件描述</th>
+                        <th>模型判断</th>
+                        <th>真实结果</th>
+
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>网传国际通用报警求助手势，假的？</td>
+                        <td>rumor</td>
+                        <td>rumor</td>
+
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>清华实验室爆炸32岁博士后遇难 母亲卖鸡蛋供其上学[悲伤]</td>
+                        <td>non-rumor</td>
+                        <td>non-rumor</td>
+
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>犯罪学证据:猫在主人死后不久就开始吃他们的尸体导致取证困难</td>
+                        <td>rumor</td>
+                        <td>rumor</td>
+
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>路上推销福建安溪铁观音不是铁观音而是关音土-迷魂药，</td>
+                        <td>rumor</td>
+                        <td>rumor</td>
+
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>以下食物三小时之内不宜同时食用</td>
+                        <td>non-rumor</td>
+                        <td>rumor</td>
+
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>请注意：男人啤酒喝多了会女性化，啤酒中含有植物雌激素</td>
+                        <td>rumor</td>
+                        <td>rumor</td>
+
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>六旬清扫工为省车费步行3小时讨要万元工资</td>
+                        <td>non-rumor</td>
+                        <td>non-rumor</td>
+
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>考古学家发现全新人种：距今1.4万年的#马鹿洞人#</td>
+                        <td>non-rumor</td>
+                        <td>non-rumor</td>
+
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>巴厘岛飞北京航班出故障 机上氧气面罩全弹出 紧急备降马来西亚</td>
+                        <td>non-rumor</td>
+                        <td>non-rumor</td>
+
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>不明觉厉！《科学》评出2015十大科学突破</td>
+                        <td>non-rumor</td>
+                        <td>non-rumor</td>
+
+                    </tr>
+                    <tr>
+                        <td>11</td>
+                        <td>公务“吃住行”新标准：住酒店最高1100元标准</td>
+                        <td>rumor</td>
+                        <td>non-rumor</td>
+
+                    </tr>
+                    <tr>
+                        <td>12</td>
+                        <td>牛！我国成功研制电动车“超强电池” 充电7秒续航35公里[给力]</td>
+                        <td>non-rumor</td>
+                        <td>non-rumor</td>
+
+                    </tr>
+                    <tr>
+                        <td>13</td>
+                        <td>人民网揭出惊天黑幕：中国75%电表都被蓄意加速</td>
+                        <td>rumor</td>
+                        <td>rumor</td>
+
+                    </tr>
+                    <tr>
+                        <td>14</td>
+                        <td>消防员穿越火线救出19人 把头盔让给婴儿</td>
+                        <td>non-rumor</td>
+                        <td>non-rumor</td>
+
+                    </tr>
+                    <tr>
+                        <td>15</td>
+                        <td>男生跑步跑“断”腿 6年碳酸饮料喝成“骨脆脆”</td>
+                        <td>rumor</td>
+                        <td>non-rumor</td>
+
+                    </tr>
+                    <tr>
+                        <td>16</td>
+                        <td>爱尔兰结婚不许离婚，但是可以选择年限1到100年</td>
+                        <td>rumor</td>
+                        <td>rumor</td>
+
+                    </tr>
+                    <tr>
+                        <td>17</td>
+                        <td>蛔虫美女问世：减肥不用运动不用节食：吃蛔虫卵。</td>
+                        <td>rumor</td>
+                        <td>rumor</td>
+
+                    </tr>
+                    <tr>
+                        <td>18</td>
+                        <td>锐见：冷血和道德解释不了万科宝能攻防战</td>
+                        <td>non-rumor</td>
+                        <td>non-rumor</td>
+
+                    </tr>
+                    <tr>
+                        <td>19</td>
+                        <td>同性恋可以结婚了，广州民政局太给力了</td>
+                        <td>non-rumor</td>
+                        <td>rumor</td>
+
+                    </tr>
+                    <tr>
+                        <td>20</td>
+                        <td>上海5月10日起出租车起步费上调至15块 单价每公里3.1元</td>
+                        <td>rumor</td>
+                        <td>rumor</td>
+
+                    </tr>
+                    <tr>
+                        <td>21</td>
+                        <td>家长应陪孩子观看的100集BBC经典纪录片。</td>
+                        <td>rumor</td>
+                        <td>non-rumor</td>
+
+                    </tr>
+                    <tr>
+                        <td>22</td>
+                        <td>《爱情公寓》第三季，将在今晚黄金时段“CCTV8”电视剧频道，隆重开播。</td>
+                        <td>non-rumor</td>
+                        <td>rumor</td>
+
+                    </tr>
+                    <tr>
+                        <td>23</td>
+                        <td>故宫养心殿百年首次大修 2020年将重焕光彩</td>
+                        <td>non-rumor</td>
+                        <td>non-rumor</td>
+                    </tr>
+                    <tr>
+                        <td>24</td>
+                        <td>泰国载中国游客巴士翻车 已至10余人遇难</td>
+                        <td>non-rumor</td>
+                        <td>non-rumor</td>
+
+                    </tr>
+                    <tr>
+                        <td>25</td>
+                        <td>“顶花”黄瓜或有猫腻，生长剂含避孕药</td>
+                        <td>rumor</td>
+                        <td>rumor</td>
+
+                    </tr>
+                    <tr>
+                        <td>26</td>
+                        <td>央视快讯：山体滑坡致#深圳十余栋楼房倒塌#！有人被困</td>
+                        <td>non-rumor</td>
+                        <td>non-rumor</td>
+
+                    </tr>
+                    <tr>
+                        <td>27</td>
+                        <td>早期的《焦点访谈》曾经是由陈佩斯主持的</td>
+                        <td>rumor</td>
+                        <td>rumor</td>
+
+                    </tr>
+                    <tr>
+                        <td>28</td>
+                        <td>村民上海卖煎饼年收入几十万</td>
+                        <td>non-rumor</td>
+                        <td>non-rumor</td>
+
+                    </tr>
+                    <tr>
+                        <td>29</td>
+                        <td>中韩中澳自贸协定今起生效 哪些商品可以马上免税</td>
+                        <td>non-rumor</td>
+                        <td>non-rumor</td>
+
+                    </tr>
+                    <tr>
+                        <td>30</td>
+                        <td>为了孩子，请拒吃转基因食品！</td>
+                        <td>rumor</td>
+                        <td>rumor</td>
+
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>
